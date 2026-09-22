@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison du Cèdre | Expertise boulangère pour les professionnels</title>
+<meta name="description" content="Maison du Cèdre accompagne les professionnels de la restauration avec des pains premium et plus de 25 ans d'expertise.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root{
+  --cream:#f7f3ec;
+  --paper:#fffdf9;
+  --dark:#17231d;
+  --green:#233b2c;
+  --gold:#b28a52;
+  --text:#28332d;
+  --muted:#68736d;
+  --line:#ddd6ca;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",Arial,sans-serif;color:var(--text);background:var(--paper);line-height:1.7}
+.container{width:min(1120px,92%);margin:auto}
+.header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(255,253,249,.96);border-bottom:1px solid rgba(221,214,202,.7)}
+.nav-container{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dark)}
+.logo-mark{color:var(--gold);font-size:25px}
+.logo-text{display:flex;flex-direction:column;line-height:1.05}
+.logo-text strong{font-family:"Playfair Display",serif;letter-spacing:1px;font-size:17px}
+.logo-text small{font-size:8px;letter-spacing:2px;margin-top:5px;color:var(--muted)}
+.nav{display:flex;gap:22px}
+.nav a,.footer a{color:inherit;text-decoration:none;font-size:13px}
+.nav a:hover{color:var(--gold)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.language-btn,.menu-btn{border:0;background:none;cursor:pointer}
+.language-btn{font-weight:600}
+.nav-cta,.btn{display:inline-block;text-decoration:none;padding:12px 19px;border-radius:2px;font-weight:600;font-size:13px}
+.nav-cta,.btn-primary{background:var(--green);color:white}
+.menu-btn{display:none}
+.hero{min-height:760px;padding-top:78px;display:flex;align-items:center;background:
+linear-gradient(90deg,rgba(23,35,29,.94),rgba(23,35,29,.72),rgba(23,35,29,.35)),
+radial-gradient(circle at 75% 40%,#9b7b55,#38493b 45%,#17231d 75%);color:white}
+.hero-content{padding:90px 0}
+.hero-label,.section-label{font-size:11px;letter-spacing:2px;font-weight:700;color:var(--gold);margin-bottom:20px}
+.hero-label span,.section-label span{display:inline-block;width:28px;height:1px;background:currentColor;vertical-align:middle;margin-right:10px}
+h1,h2{font-family:"Playfair Display",serif;font-weight:600;line-height:1.12}
+h1{font-size:clamp(45px,6vw,76px);max-width:850px}
+h1 em,h2 span{color:var(--gold);font-style:normal}
+.hero-text{max-width:650px;font-size:18px;margin:28px 0 35px;color:#edf0eb}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn-outline{border:1px solid rgba(255,255,255,.65);color:white}
+.btn-outline-dark{border:1px solid var(--dark);color:var(--dark)}
+.hero-trust{display:flex;gap:45px;margin-top:75px;flex-wrap:wrap}
+.hero-trust div{display:flex;flex-direction:column}
+.hero-trust strong{font-family:"Playfair Display",serif;font-size:28px}
+.hero-trust span{font-size:11px;letter-spacing:1px;color:#d5dcd5}
+.section{padding:105px 0}
+.intro-grid,.quality-grid,.restaurant-grid,.contact-grid{display:grid;grid-template-columns:1fr 2fr;gap:70px}
+h2{font-size:clamp(36px,4.5vw,58px);margin-bottom:25px}
+.large-text{font-size:20px;margin-bottom:20px}
+p{color:var(--muted)}
+.dark-section{background:var(--dark);color:white}
+.dark-section p{color:#c4ccc6}
+.section-heading{max-width:760px;margin-bottom:55px}
+.section-heading.light .section-label{color:#c8a66f}
+.expertise-grid,.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#496052}
+.expertise-card,.service{background:var(--green);padding:35px 28px;min-height:300px}
+.card-number,.service-number{font-size:11px;color:var(--gold);letter-spacing:2px}
+.card-icon{font-size:30px;color:var(--gold);margin:30px 0 20px}
+h3{font-family:"Playfair Display",serif;font-size:23px;line-height:1.25;margin-bottom:12px}
+.products{background:var(--cream)}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.product-card{background:white;border:1px solid var(--line)}
+.product-image{height:260px;background-size:cover;background-position:center}
+.image-one{background:linear-gradient(135deg,#d4b98d,#7d5939)}
+.image-two{background:linear-gradient(135deg,#e0c79e,#59422f)}
+.image-three{background:linear-gradient(135deg,#b8a078,#3c493b)}
+.product-content{padding:25px}
+.product-tag{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:700}
+.quality{background:var(--cream)}
+.quality-image{min-height:450px;background:linear-gradient(145deg,#c2a77d,#53634f 55%,#1d3025);position:relative}
+.quality-badge{position:absolute;right:-20px;bottom:25px;background:var(--dark);color:white;padding:22px;text-align:center}
+.quality-badge strong{display:block;font-family:"Playfair Display",serif;font-size:35px;color:var(--gold)}
+.quality-badge span{font-size:9px;letter-spacing:2px}
+.check-list{list-style:none;margin-top:25px}
+.check-list li{padding:9px 0;border-bottom:1px solid var(--line)}
+.check-list span{color:var(--gold);margin-right:10px;font-weight:bold}
+.service{min-height:240px}
+.service-number{display:block;margin-bottom:55px}
+.restaurants{background:white}
+.restaurant-points{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}
+.restaurant-point{display:flex;gap:18px;padding:25px 0;border-bottom:1px solid var(--line)}
+.restaurant-point>strong{color:var(--gold)}
+.occasion{background:var(--gold);color:white;text-align:center}
+.occasion p{color:white;max-width:700px;margin:0 auto 25px}
+.occasion .section-label{color:white}
+.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:250px 250px;gap:12px}
+.gallery-item{overflow:hidden;background:#b9aa92}
+.gallery-item img{width:100%;height:100%;object-fit:cover}
+.gallery-large{grid-row:span 2}
+.contact h2{color:white}
+.contact-grid{align-items:start}
+.contact-card{background:var(--green);padding:35px}
+.contact-row{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid #496052}
+.contact-row>span{color:var(--gold);font-size:20px}
+.contact-row small{display:block;font-size:9px;letter-spacing:2px;color:#aebbb1}
+.contact-row strong{font-size:14px}
+.contact-button{margin-top:25px}
+.footer{background:#101812;color:white;padding:55px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:45px}
+.footer-brand p{max-width:350px;margin-top:18px}
+.footer-links{display:flex;flex-direction:column;gap:9px}
+.footer-links h4{color:var(--gold);font-size:11px;letter-spacing:2px;margin-bottom:8px}
+.footer-bottom{border-top:1px solid #2b382f;padding:20px 0;color:#89958d;font-size:11px}
+.footer-bottom .container{display:flex;justify-content:space-between;gap:20px}
+
+@media(max-width:900px){
+  .nav{display:none}
+  .nav-cta{display:none}
+  .menu-btn{display:block}
+  .intro-grid,.quality-grid,.restaurant-grid,.contact-grid{grid-template-columns:1fr;gap:35px}
+  .expertise-grid,.services-grid{grid-template-columns:1fr 1fr}
+  .product-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px}
+  .gallery-large{grid-row:span 2}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .section{padding:75px 0}
+  .hero{min-height:700px}
+  .hero-trust{gap:22px;margin-top:50px}
+  .expertise-grid,.services-grid,.restaurant-points,.gallery-grid,.footer-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-rows:220px}
+  .gallery-large{grid-row:auto}
+  .quality-image{min-height:330px}
+  .footer-bottom .container{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav-container">
+    <a href="#accueil" class="logo">
+      <span class="logo-mark">✦</span>
+      <span class="logo-text">
+        <strong>MAISON DU CÈDRE</strong>
+        <small>EXPERTISE BOULANGÈRE</small>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#accueil">Accueil</a>
+      <a href="#expertise">Notre expertise</a>
+      <a href="#produits">Nos pains</a>
+      <a href="#services">Nos services</a>
+      <a href="#restaurateurs">Restaurateurs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="language-btn" type="button">FR</button>
+      <a href="#contact" class="nav-cta">Nous contacter</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="accueil">
+  <div class="container hero-content">
+    <div class="hero-label"><span></span>PLUS DE 25 ANS D'EXPERTISE</div>
+    <h1>Le savoir-faire boulanger <em>au service de la restauration.</em></h1>
+    <p class="hero-text">Maison du Cèdre accompagne les professionnels de la restauration avec des pains de qualité premium, une production maîtrisée et un service de proximité pensé pour leurs exigences.</p>
+    <div class="hero-buttons">
+      <a href="#expertise" class="btn btn-primary">Découvrir notre expertise</a>
+      <a href="#contact" class="btn btn-outline">Devenir partenaire</a>
+    </div>
+    <div class="hero-trust">
+      <div><strong>25+</strong><span>ans d'expérience</span></div>
+      <div><strong>Premium</strong><span>matières premières</span></div>
+      <div><strong>100%</strong><span>exigence professionnelle</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="intro section">
+  <div class="container intro-grid">
+    <div class="section-label"><span>01</span>MAISON DU CÈDRE</div>
+    <div>
+      <h2>Une expertise construite <span>sur plus de 25 ans.</span></h2>
+      <p class="large-text">Fondée sur plus de 25 ans d'expertise dans la boulangerie et la production de pains destinés à la restauration, Maison du Cèdre met son savoir-faire au service des professionnels de la table.</p>
+      <p>Notre métier repose sur une conviction simple : la qualité d'un pain ne doit jamais être laissée au hasard. Chaque matière première, chaque étape de fabrication et chaque détail de finition font l'objet d'une attention rigoureuse.</p>
+    </div>
+  </div>
+</section>
+
+<section class="expertise section dark-section" id="expertise">
+  <div class="container">
+    <div class="section-heading light">
+      <div class="section-label"><span>02</span>NOTRE EXPERTISE</div>
+      <h2>L'exigence dans <span>chaque détail.</span></h2>
+      <p>De la sélection des matières premières à la cuisson, notre expertise s'exprime à chaque étape.</p>
+    </div>
+    <div class="expertise-grid">
+      <article class="expertise-card"><div class="card-number">01</div><div class="card-icon">◈</div><h3>Matières premières premium</h3><p>Nous accordons une attention particulière à la sélection de nos matières premières afin de garantir la qualité et la régularité de nos pains.</p></article>
+      <article class="expertise-card"><div class="card-number">02</div><div class="card-icon">✧</div><h3>Savoir-faire</h3><p>Plus de 25 ans d'expérience nous permettent de maîtriser les exigences techniques de la fabrication de pains destinés aux professionnels.</p></article>
+      <article class="expertise-card"><div class="card-number">03</div><div class="card-icon">◌</div><h3>Travail minutieux</h3><p>Chaque étape est réalisée avec rigueur et précision afin de maintenir un niveau de qualité constant.</p></article>
+      <article class="expertise-card"><div class="card-number">04</div><div class="card-icon">◇</div><h3>Qualité premium</h3><p>Notre objectif est de proposer aux restaurateurs un pain qui contribue pleinement à l'expérience de leurs clients.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="products section" id="produits">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-label"><span>03</span>NOS PAINS</div>
+      <h2>Des produits pensés <span>pour les professionnels.</span></h2>
+      <p>Une gamme de pains destinée à accompagner les différents univers de la restauration et à répondre aux attentes des professionnels.</p>
+    </div>
+    <div class="product-grid">
+      <article class="product-card"><div class="product-image image-one"></div><div class="product-content"><span class="product-tag">RESTAURATION</span><h3>Pains de table</h3><p>Des pains conçus pour accompagner les repas et valoriser chaque table.</p></div></article>
+      <article class="product-card"><div class="product-image image-two"></div><div class="product-content"><span class="product-tag">PROFESSIONNELS</span><h3>Pains spéciaux</h3><p>Des références adaptées aux différents besoins et concepts de restauration.</p></div></article>
+      <article class="product-card"><div class="product-image image-three"></div><div class="product-content"><span class="product-tag">SAVOIR-FAIRE</span><h3>Créations boulangères</h3><p>Des produits développés avec exigence, précision et attention au résultat final.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="quality section">
+  <div class="container quality-grid">
+    <div class="quality-image"><div class="quality-badge"><strong>25+</strong><span>ANS D'EXPERTISE</span></div></div>
+    <div class="quality-content">
+      <div class="section-label"><span>04</span>NOTRE ENGAGEMENT</div>
+      <h2>La qualité n'est pas <span>une option.</span></h2>
+      <p>Pour un restaurateur, le pain doit être bien plus qu'un simple accompagnement.</p>
+      <p>Il participe à l'identité de la table, à l'expérience du convive et à l'image de l'établissement.</p>
+      <ul class="check-list">
+        <li><span>✓</span>Sélection rigoureuse des matières premières</li>
+        <li><span>✓</span>Production maîtrisée</li>
+        <li><span>✓</span>Contrôle attentif à chaque étape</li>
+        <li><span>✓</span>Recherche constante de régularité</li>
+        <li><span>✓</span>Accompagnement personnalisé</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="services section dark-section" id="services">
+  <div class="container">
+    <div class="section-heading light">
+      <div class="section-label"><span>05</span>NOS SERVICES</div>
+      <h2>Une relation professionnelle <span>qui va au-delà du produit.</span></h2>
+      <p>Parce qu'un bon produit doit être accompagné d'un service à la hauteur.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service"><span class="service-number">01</span><h3>Vente directe</h3><p>Une relation commerciale directe permettant des échanges simples, rapides et personnalisés.</p></article>
+      <article class="service"><span class="service-number">02</span><h3>Télévente</h3><p>Une prise de commande facilitée et un interlocuteur disponible pour accompagner les besoins de votre établissement.</p></article>
+      <article class="service"><span class="service-number">03</span><h3>Suivi personnalisé</h3><p>Nous restons à l'écoute de nos partenaires afin d'assurer un suivi régulier et une relation durable.</p></article>
+      <article class="service"><span class="service-number">04</span><h3>Accompagnement</h3><p>Notre équipe accompagne les restaurateurs dans leurs besoins et leurs évolutions.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="restaurants section" id="restaurateurs">
+  <div class="container restaurant-grid">
+    <div class="restaurant-content">
+      <div class="section-label"><span>06</span>POUR LES RESTAURATEURS</div>
+      <h2>Votre exigence. <span>Notre engagement.</span></h2>
+      <p class="large-text">Nous savons que les professionnels de la restauration ont besoin de partenaires fiables, réactifs et attentifs à la régularité.</p>
+      <p>C'est pourquoi nous construisons avec chaque client une relation fondée sur l'écoute, la confiance, la qualité et le suivi.</p>
+      <br><a href="#contact" class="btn btn-primary">Échanger avec notre équipe</a>
+    </div>
+    <div class="restaurant-points">
+      <div class="restaurant-point"><strong>01</strong><div><h3>Écoute</h3><p>Comprendre les besoins spécifiques de chaque établissement.</p></div></div>
+      <div class="restaurant-point"><strong>02</strong><div><h3>Réactivité</h3><p>Une relation directe et une communication simple avec nos partenaires.</p></div></div>
+      <div class="restaurant-point"><strong>03</strong><div><h3>Régularité</h3><p>Maintenir un niveau de qualité constant au fil des commandes.</p></div></div>
+      <div class="restaurant-point"><strong>04</strong><div><h3>Partenariat</h3><p>Construire une relation professionnelle durable.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="occasion section">
+  <div class="container occasion-inner">
+    <div class="occasion-label">POUR VOS OCCASIONS</div>
+    <h2>Des solutions adaptées <span>à chaque moment.</span></h2>
+    <p>Restaurants, hôtels, événements professionnels, réceptions ou besoins spécifiques : Maison du Cèdre vous accompagne avec des solutions adaptées à votre activité.</p>
+    <br><a href="#contact" class="btn btn-outline">Parlons de votre projet</a>
+  </div>
+</section>
+
+<section class="gallery section">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-label"><span>07</span>NOTRE UNIVERS</div>
+      <h2>Le geste, <span>la précision, le produit.</span></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-large" style="background:linear-gradient(135deg,#c6ad82,#435344)"></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#d9bd91,#62472f)"></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#bba47c,#4a513e)"></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#927451,#28392d)"></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact section dark-section" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="section-label"><span>08</span>CONTACT</div>
+      <h2>Construisons ensemble <span>une relation durable.</span></h2>
+      <p>Vous êtes restaurateur, hôtelier ou professionnel de la restauration et souhaitez découvrir notre gamme ?</p>
+      <br><p>Notre équipe est à votre écoute pour échanger sur vos besoins et vous accompagner.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-row"><span>☎</span><div><small>TÉLÉPHONE</small><strong>+33 (0)X XX XX XX XX</strong></div></div>
+      <div class="contact-row"><span>✉</span><div><small>EMAIL</small><strong>contact@maisonducedre.fr</strong></div></div>
+      <div class="contact-row"><span>⌖</span><div><small>ADRESSE</small><strong>Île-de-France, France</strong></div></div>
+      <a href="mailto:contact@maisonducedre.fr" class="btn btn-primary contact-button">Prendre contact</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#accueil" class="logo">
+        <span class="logo-mark">✦</span>
+        <span class="logo-text"><strong>MAISON DU CÈDRE</strong><small>EXPERTISE BOULANGÈRE</small></span>
+      </a>
+      <p>Le savoir-faire boulanger au service des professionnels de la restauration.</p>
+    </div>
+    <div class="footer-links">
+      <h4>NAVIGATION</h4>
+      <a href="#expertise">Notre expertise</a>
+      <a href="#produits">Nos pains</a>
+      <a href="#services">Nos services</a>
+      <a href="#restaurateurs">Restaurateurs</a>
+    </div>
+    <div class="footer-links">
+      <h4>PROFESSIONNELS</h4>
+      <a href="#contact">Demande commerciale</a>
+      <a href="#contact">Télévente</a>
+      <a href="#contact">Devenir partenaire</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span>© 2026 Maison du Cèdre. Tous droits réservés.</span>
+      <span>Qualité · Expertise · Engagement</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", () => {
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+  nav.style.position = "absolute";
+  nav.style.top = "78px";
+  nav.style.left = "0";
+  nav.style.right = "0";
+  nav.style.padding = "20px";
+  nav.style.background = "#fffdf9";
+  nav.style.flexDirection = "column";
+});
+</script>
+
+</body>
+</html>

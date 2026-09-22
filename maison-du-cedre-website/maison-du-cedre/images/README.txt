@@ -1,0 +1,1 @@
+Place your Maison du Cèdre logo and real bakery photos in this folder. Suggested names: logo.png, bread-01.jpg, manouche.jpg, preparation.jpg, bakery.jpg.
