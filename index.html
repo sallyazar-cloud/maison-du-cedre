@@ -2,376 +2,1341 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maison du Cèdre | Expertise boulangère pour les professionnels</title>
-<meta name="description" content="Maison du Cèdre accompagne les professionnels de la restauration avec des pains premium et plus de 25 ans d'expertise.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Maison du Cèdre — pain premium pour professionnels de la restauration. 25 ans d'expertise, livraison Île-de-France.">
+<title>Maison du Cèdre | Pain artisanal pour la restauration professionnelle</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+/* ─── Tokens ─── */
+:root {
+  --ink:       #1a1f1c;
+  --ink-soft:  #3d4740;
+  --field:     #f2ede6;
+  --paper:     #faf8f5;
+  --white:     #ffffff;
+  --grove:     #1e3528;
+  --grove-mid: #2e4f3e;
+  --grove-lit: #3d6650;
+  --amber:     #a0722a;
+  --amber-lit: #c9923a;
+  --rule:      #d5cfc6;
+  --rule-dark: #3a4f43;
 
-:root{
-  --cream:#f7f3ec;
-  --paper:#fffdf9;
-  --dark:#17231d;
-  --green:#233b2c;
-  --gold:#b28a52;
-  --text:#28332d;
-  --muted:#68736d;
-  --line:#ddd6ca;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"DM Sans",Arial,sans-serif;color:var(--text);background:var(--paper);line-height:1.7}
-.container{width:min(1120px,92%);margin:auto}
-.header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(255,253,249,.96);border-bottom:1px solid rgba(221,214,202,.7)}
-.nav-container{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dark)}
-.logo-mark{color:var(--gold);font-size:25px}
-.logo-text{display:flex;flex-direction:column;line-height:1.05}
-.logo-text strong{font-family:"Playfair Display",serif;letter-spacing:1px;font-size:17px}
-.logo-text small{font-size:8px;letter-spacing:2px;margin-top:5px;color:var(--muted)}
-.nav{display:flex;gap:22px}
-.nav a,.footer a{color:inherit;text-decoration:none;font-size:13px}
-.nav a:hover{color:var(--gold)}
-.nav-actions{display:flex;align-items:center;gap:10px}
-.language-btn,.menu-btn{border:0;background:none;cursor:pointer}
-.language-btn{font-weight:600}
-.nav-cta,.btn{display:inline-block;text-decoration:none;padding:12px 19px;border-radius:2px;font-weight:600;font-size:13px}
-.nav-cta,.btn-primary{background:var(--green);color:white}
-.menu-btn{display:none}
-.hero{min-height:760px;padding-top:78px;display:flex;align-items:center;background:
-linear-gradient(90deg,rgba(23,35,29,.94),rgba(23,35,29,.72),rgba(23,35,29,.35)),
-radial-gradient(circle at 75% 40%,#9b7b55,#38493b 45%,#17231d 75%);color:white}
-.hero-content{padding:90px 0}
-.hero-label,.section-label{font-size:11px;letter-spacing:2px;font-weight:700;color:var(--gold);margin-bottom:20px}
-.hero-label span,.section-label span{display:inline-block;width:28px;height:1px;background:currentColor;vertical-align:middle;margin-right:10px}
-h1,h2{font-family:"Playfair Display",serif;font-weight:600;line-height:1.12}
-h1{font-size:clamp(45px,6vw,76px);max-width:850px}
-h1 em,h2 span{color:var(--gold);font-style:normal}
-.hero-text{max-width:650px;font-size:18px;margin:28px 0 35px;color:#edf0eb}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
-.btn-outline{border:1px solid rgba(255,255,255,.65);color:white}
-.btn-outline-dark{border:1px solid var(--dark);color:var(--dark)}
-.hero-trust{display:flex;gap:45px;margin-top:75px;flex-wrap:wrap}
-.hero-trust div{display:flex;flex-direction:column}
-.hero-trust strong{font-family:"Playfair Display",serif;font-size:28px}
-.hero-trust span{font-size:11px;letter-spacing:1px;color:#d5dcd5}
-.section{padding:105px 0}
-.intro-grid,.quality-grid,.restaurant-grid,.contact-grid{display:grid;grid-template-columns:1fr 2fr;gap:70px}
-h2{font-size:clamp(36px,4.5vw,58px);margin-bottom:25px}
-.large-text{font-size:20px;margin-bottom:20px}
-p{color:var(--muted)}
-.dark-section{background:var(--dark);color:white}
-.dark-section p{color:#c4ccc6}
-.section-heading{max-width:760px;margin-bottom:55px}
-.section-heading.light .section-label{color:#c8a66f}
-.expertise-grid,.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#496052}
-.expertise-card,.service{background:var(--green);padding:35px 28px;min-height:300px}
-.card-number,.service-number{font-size:11px;color:var(--gold);letter-spacing:2px}
-.card-icon{font-size:30px;color:var(--gold);margin:30px 0 20px}
-h3{font-family:"Playfair Display",serif;font-size:23px;line-height:1.25;margin-bottom:12px}
-.products{background:var(--cream)}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.product-card{background:white;border:1px solid var(--line)}
-.product-image{height:260px;background-size:cover;background-position:center}
-.image-one{background:linear-gradient(135deg,#d4b98d,#7d5939)}
-.image-two{background:linear-gradient(135deg,#e0c79e,#59422f)}
-.image-three{background:linear-gradient(135deg,#b8a078,#3c493b)}
-.product-content{padding:25px}
-.product-tag{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:700}
-.quality{background:var(--cream)}
-.quality-image{min-height:450px;background:linear-gradient(145deg,#c2a77d,#53634f 55%,#1d3025);position:relative}
-.quality-badge{position:absolute;right:-20px;bottom:25px;background:var(--dark);color:white;padding:22px;text-align:center}
-.quality-badge strong{display:block;font-family:"Playfair Display",serif;font-size:35px;color:var(--gold)}
-.quality-badge span{font-size:9px;letter-spacing:2px}
-.check-list{list-style:none;margin-top:25px}
-.check-list li{padding:9px 0;border-bottom:1px solid var(--line)}
-.check-list span{color:var(--gold);margin-right:10px;font-weight:bold}
-.service{min-height:240px}
-.service-number{display:block;margin-bottom:55px}
-.restaurants{background:white}
-.restaurant-points{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}
-.restaurant-point{display:flex;gap:18px;padding:25px 0;border-bottom:1px solid var(--line)}
-.restaurant-point>strong{color:var(--gold)}
-.occasion{background:var(--gold);color:white;text-align:center}
-.occasion p{color:white;max-width:700px;margin:0 auto 25px}
-.occasion .section-label{color:white}
-.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:250px 250px;gap:12px}
-.gallery-item{overflow:hidden;background:#b9aa92}
-.gallery-item img{width:100%;height:100%;object-fit:cover}
-.gallery-large{grid-row:span 2}
-.contact h2{color:white}
-.contact-grid{align-items:start}
-.contact-card{background:var(--green);padding:35px}
-.contact-row{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid #496052}
-.contact-row>span{color:var(--gold);font-size:20px}
-.contact-row small{display:block;font-size:9px;letter-spacing:2px;color:#aebbb1}
-.contact-row strong{font-size:14px}
-.contact-button{margin-top:25px}
-.footer{background:#101812;color:white;padding:55px 0 0}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:45px}
-.footer-brand p{max-width:350px;margin-top:18px}
-.footer-links{display:flex;flex-direction:column;gap:9px}
-.footer-links h4{color:var(--gold);font-size:11px;letter-spacing:2px;margin-bottom:8px}
-.footer-bottom{border-top:1px solid #2b382f;padding:20px 0;color:#89958d;font-size:11px}
-.footer-bottom .container{display:flex;justify-content:space-between;gap:20px}
+  --f-serif: 'Libre Baskerville', Georgia, serif;
+  --f-sans:  'Inter', system-ui, sans-serif;
 
-@media(max-width:900px){
-  .nav{display:none}
-  .nav-cta{display:none}
-  .menu-btn{display:block}
-  .intro-grid,.quality-grid,.restaurant-grid,.contact-grid{grid-template-columns:1fr;gap:35px}
-  .expertise-grid,.services-grid{grid-template-columns:1fr 1fr}
-  .product-grid{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px}
-  .gallery-large{grid-row:span 2}
-  .footer-grid{grid-template-columns:1fr 1fr}
+  --sp-xs:  6px;
+  --sp-s:   12px;
+  --sp-m:   24px;
+  --sp-l:   48px;
+  --sp-xl:  80px;
+  --sp-2xl: 130px;
+
+  --radius: 0px;
+  --max:    1100px;
+
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-@media(max-width:600px){
-  .section{padding:75px 0}
-  .hero{min-height:700px}
-  .hero-trust{gap:22px;margin-top:50px}
-  .expertise-grid,.services-grid,.restaurant-points,.gallery-grid,.footer-grid{grid-template-columns:1fr}
-  .gallery-grid{grid-template-rows:220px}
-  .gallery-large{grid-row:auto}
-  .quality-image{min-height:330px}
-  .footer-bottom .container{flex-direction:column}
+*, *::before, *::after { box-sizing: inherit; margin: 0; padding: 0; }
+
+/* ─── Base ─── */
+body {
+  font-family: var(--f-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  padding-top: env(safe-area-inset-top, 0);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.wrap { width: min(var(--max), 92%); margin-inline: auto; }
+
+img { display: block; max-width: 100%; }
+
+/* ─── Typography ─── */
+h1, h2, h3 { font-family: var(--f-serif); line-height: 1.15; color: var(--ink); }
+h1 { font-size: clamp(38px, 5.5vw, 68px); font-weight: 700; }
+h2 { font-size: clamp(28px, 4vw, 46px); font-weight: 700; }
+h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
+p  { color: var(--ink-soft); max-width: 62ch; }
+
+em { font-style: italic; color: var(--amber); }
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-block;
+  font-family: var(--f-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-decoration: none;
+  padding: 14px 24px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background .18s, color .18s, border-color .18s;
+}
+.btn-dark  { background: var(--grove); color: var(--white); border-color: var(--grove); }
+.btn-dark:hover { background: var(--grove-mid); border-color: var(--grove-mid); }
+.btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,.55); }
+.btn-ghost:hover { background: rgba(255,255,255,.1); }
+.btn-outline { background: transparent; color: var(--grove); border-color: var(--grove); }
+.btn-outline:hover { background: var(--grove); color: var(--white); }
+.btn-amber { background: var(--amber); color: var(--white); border-color: var(--amber); }
+.btn-amber:hover { background: var(--amber-lit); border-color: var(--amber-lit); }
+
+/* ─── NAV ─── */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  z-index: 200;
+  background: rgba(250,248,245,.97);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(6px);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 70px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.brand-mark { color: var(--amber); font-size: 20px; }
+.brand-name { font-family: var(--f-serif); font-size: 16px; font-weight: 700; letter-spacing: .04em; }
+.brand-sub  { display: block; font-size: 8.5px; letter-spacing: .18em; color: var(--ink-soft); margin-top: 2px; }
+
+.nav-links { display: flex; align-items: center; gap: 26px; }
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.nav-links a:hover { color: var(--grove); }
+.nav-links a.cta { color: var(--white); background: var(--grove); padding: 9px 18px; font-weight: 600; }
+.nav-links a.cta:hover { background: var(--grove-mid); }
+.language-toggle {
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--grove);
+  padding: 8px 12px;
+  font: 600 12px var(--f-sans);
+  letter-spacing: .04em;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--ink);
+  font-size: 22px;
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100svh;
+  padding-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+.hero-left {
+  background: var(--grove);
+  color: var(--white);
+  padding: var(--sp-2xl) 6% var(--sp-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-right {
+  background:
+    linear-gradient(160deg, rgba(61,94,74,.7), rgba(30,53,40,.9)),
+    url("images/hero-bread.jpg") center / cover;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: var(--sp-xl) 6% var(--sp-l);
+  gap: var(--sp-l);
+}
+.hero-photo {
+  min-height: 260px;
+  background:
+    linear-gradient(180deg, rgba(20,32,24,.05), rgba(20,32,24,.72)),
+    url("images/hero-bread.jpg") center / cover;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--sp-m);
+}
+.hero-photo-caption {
+  color: rgba(255,255,255,.8);
+  font-family: var(--f-serif);
+  font-size: 14px;
+  font-style: italic;
+}
+.hero-badge {
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: var(--amber-lit);
+  margin-bottom: var(--sp-m);
+  font-weight: 600;
+}
+.hero h1 { color: var(--white); margin-bottom: var(--sp-m); }
+.hero-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,.75);
+  margin-bottom: var(--sp-l);
+  max-width: 46ch;
+}
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule-dark);
+  border-top: 1px solid var(--rule-dark);
+  margin-top: var(--sp-xl);
+}
+.stat {
+  background: var(--grove);
+  padding: var(--sp-m) var(--sp-m) var(--sp-m) 0;
+}
+.stat-num {
+  font-family: var(--f-serif);
+  font-size: 36px;
+  color: var(--amber-lit);
+  line-height: 1;
+  display: block;
+}
+.stat-label { font-size: 11px; color: rgba(255,255,255,.6); letter-spacing: .05em; }
+.proof-strip { background: var(--white); border-bottom: 1px solid var(--rule); padding: var(--sp-m) 0; }
+.proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule); }
+.proof-item { background: var(--white); padding: var(--sp-s) var(--sp-m); }
+.proof-item strong { display: block; color: var(--grove); font-size: 13px; margin-bottom: 2px; }
+.proof-item span { color: var(--ink-soft); font-size: 11px; }
+
+/* Right side: catalogue preview */
+.catalogue-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  background: var(--rule-dark);
+}
+.cat-item {
+  background: rgba(255,255,255,.04);
+  padding: var(--sp-m);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.cat-item:last-child { border-bottom: none; }
+.cat-name { font-size: 14px; color: rgba(255,255,255,.9); font-weight: 500; }
+.cat-detail { font-size: 11px; color: rgba(255,255,255,.45); }
+.cat-tag {
+  font-size: 9px;
+  letter-spacing: .1em;
+  font-weight: 600;
+  color: var(--amber-lit);
+  border: 1px solid var(--amber);
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.hero-right-label {
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: rgba(255,255,255,.35);
+  margin-bottom: var(--sp-s);
+  padding-top: var(--sp-l);
+  border-top: 1px solid var(--rule-dark);
+}
+
+/* ─── SECTIONS ─── */
+.section { padding: var(--sp-2xl) 0; }
+.section-sm { padding: var(--sp-xl) 0; }
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: .2em;
+  font-weight: 600;
+  color: var(--amber);
+  margin-bottom: var(--sp-m);
+}
+.section-head { margin-bottom: var(--sp-l); }
+.section-head p { margin-top: var(--sp-s); font-size: 18px; max-width: 58ch; }
+
+/* ─── INTRO ─── */
+.intro { background: var(--field); }
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-xl);
+  align-items: center;
+}
+.intro-visual {
+  background:
+    linear-gradient(145deg, rgba(46,79,62,.25), rgba(15,30,22,.8)),
+    url("images/production.jpg") center / cover;
+  aspect-ratio: 4/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--sp-l);
+  position: relative;
+}
+.intro-visual-label {
+  font-family: var(--f-serif);
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  letter-spacing: .08em;
+}
+.years-badge {
+  position: absolute;
+  top: var(--sp-l);
+  right: calc(-1 * var(--sp-l));
+  background: var(--amber);
+  color: var(--white);
+  padding: var(--sp-m);
+  text-align: center;
+  min-width: 110px;
+}
+.years-badge strong {
+  font-family: var(--f-serif);
+  font-size: 42px;
+  display: block;
+  line-height: 1;
+}
+.years-badge span { font-size: 9px; letter-spacing: .14em; }
+
+.intro-content { padding-left: var(--sp-l); }
+.intro-content h2 { margin-bottom: var(--sp-m); }
+.intro-content p + p { margin-top: var(--sp-m); }
+
+.intro-line {
+  display: flex;
+  gap: var(--sp-m);
+  margin-top: var(--sp-l);
+  padding-top: var(--sp-l);
+  border-top: 1px solid var(--rule);
+  flex-wrap: wrap;
+}
+.intro-line-item { font-size: 13px; }
+.intro-line-item strong { display: block; font-size: 11px; letter-spacing: .1em; color: var(--amber); margin-bottom: 3px; }
+
+/* ─── CATALOGUE ─── */
+.catalogue { background: var(--paper); }
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--sp-l);
+  font-size: 14px;
+}
+.product-table th {
+  font-size: 10px;
+  letter-spacing: .15em;
+  font-weight: 600;
+  color: var(--ink-soft);
+  padding: 10px var(--sp-m);
+  text-align: left;
+  border-bottom: 2px solid var(--ink);
+}
+.product-table td {
+  padding: 16px var(--sp-m);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-soft);
+  vertical-align: top;
+}
+.product-table tr:last-child td { border-bottom: none; }
+.product-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: var(--sp-l); }
+.product-gallery figure { margin: 0; aspect-ratio: 1 / .78; overflow: hidden; background: var(--field); }
+.product-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.product-gallery figure:hover img { transform: scale(1.04); }
+.product-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-m); margin-top: var(--sp-l); }
+.product-card { background: var(--white); border: 1px solid var(--rule); overflow: hidden; }
+.product-card-image { aspect-ratio: 16 / 9; overflow: hidden; }
+.product-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.product-card:hover .product-card-image img { transform: scale(1.04); }
+.product-card-content { padding: var(--sp-m); }
+.product-card-content h3 { margin-bottom: 5px; }
+.product-card-content p { font-size: 12px; }
+.product-card-meta { display: flex; justify-content: space-between; gap: 10px; margin-top: var(--sp-s); padding-top: var(--sp-s); border-top: 1px solid var(--rule); color: var(--amber); font-size: 11px; font-weight: 600; }
+.product-table .prod-name { font-weight: 600; color: var(--ink); font-family: var(--f-serif); font-size: 15px; }
+.product-table .prod-format { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+.prod-tag {
+  font-size: 9px;
+  letter-spacing: .1em;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 2px;
+}
+.tag-new    { background: var(--grove); color: var(--white); }
+.tag-best   { background: var(--amber); color: var(--white); }
+.tag-event  { background: var(--field); color: var(--ink); }
+.catalogue-note {
+  margin-top: var(--sp-l);
+  padding: var(--sp-m);
+  background: var(--field);
+  border-left: 3px solid var(--amber);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.catalogue-note strong { color: var(--ink); }
+
+/* ─── PROCESS ─── */
+.process { background: var(--grove); color: var(--white); }
+.process h2 { color: var(--white); }
+.process .section-label { color: var(--amber-lit); }
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--rule-dark);
+  margin-top: var(--sp-l);
+}
+.process-step {
+  background: var(--grove);
+  padding: var(--sp-l) var(--sp-m);
+}
+.step-num {
+  font-family: var(--f-serif);
+  font-size: 48px;
+  color: rgba(255,255,255,.1);
+  line-height: 1;
+  margin-bottom: var(--sp-m);
+}
+.process-step h3 { color: var(--white); font-size: 16px; margin-bottom: 8px; }
+.process-step p  { color: rgba(255,255,255,.6); font-size: 14px; max-width: none; }
+
+/* ─── COMMITMENT ─── */
+.commitment { background: var(--field); }
+.commitment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-xl);
+  align-items: start;
+}
+.commit-list { list-style: none; margin-top: var(--sp-m); }
+.commit-list li {
+  display: flex;
+  gap: var(--sp-m);
+  padding: var(--sp-m) 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: flex-start;
+}
+.commit-list li:last-child { border-bottom: none; }
+.commit-check { color: var(--amber); font-weight: 700; flex-shrink: 0; }
+.commit-text strong { display: block; font-weight: 600; color: var(--ink); font-size: 14px; margin-bottom: 3px; }
+.commit-text span   { font-size: 13px; color: var(--ink-soft); }
+
+.commit-aside {
+  background: var(--grove);
+  color: var(--white);
+  padding: var(--sp-xl) var(--sp-l);
+}
+.commit-aside blockquote {
+  font-family: var(--f-serif);
+  font-size: 22px;
+  line-height: 1.4;
+  color: rgba(255,255,255,.88);
+  font-style: italic;
+  margin-bottom: var(--sp-l);
+}
+.commit-aside cite {
+  font-size: 11px;
+  letter-spacing: .12em;
+  color: var(--amber-lit);
+  font-style: normal;
+}
+
+/* ─── SERVICES ─── */
+.services { background: var(--paper); }
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-m);
+  margin-top: var(--sp-l);
+}
+.service-card {
+  border: 1px solid var(--rule);
+  padding: var(--sp-l);
+  background: var(--white);
+}
+.service-card h3 { margin-bottom: var(--sp-s); }
+.service-card p  { font-size: 14px; }
+.service-detail {
+  margin-top: var(--sp-m);
+  padding-top: var(--sp-m);
+  border-top: 1px solid var(--rule);
+  font-size: 12px;
+  color: var(--amber);
+  font-weight: 600;
+  letter-spacing: .05em;
+}
+
+/* ─── TERRITORY ─── */
+.territory { background: var(--grove); color: var(--white); }
+.territory h2 { color: var(--white); }
+.territory .section-label { color: var(--amber-lit); }
+.territory-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-xl);
+  align-items: center;
+}
+.territory p { color: rgba(255,255,255,.7); max-width: 50ch; }
+.territory-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule-dark);
+}
+.territory-cell {
+  background: rgba(255,255,255,.04);
+  padding: var(--sp-m);
+}
+.territory-cell strong {
+  display: block;
+  font-family: var(--f-serif);
+  font-size: 26px;
+  color: var(--amber-lit);
+  margin-bottom: 4px;
+}
+.territory-cell span { font-size: 12px; color: rgba(255,255,255,.55); }
+
+/* ─── CTA BAND ─── */
+.cta-band {
+  background: var(--amber);
+  padding: var(--sp-xl) 0;
+  text-align: center;
+}
+.cta-band h2 { color: var(--white); margin-bottom: var(--sp-m); }
+.cta-band p { color: rgba(255,255,255,.85); margin-inline: auto; margin-bottom: var(--sp-l); }
+.cta-band .btn-ghost { border-color: rgba(255,255,255,.7); }
+
+/* ─── CONTACT ─── */
+.contact { background: var(--grove); color: var(--white); }
+.contact h2 { color: var(--white); }
+.contact .section-label { color: var(--amber-lit); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-xl);
+  align-items: start;
+}
+.contact-intro p { color: rgba(255,255,255,.7); margin-top: var(--sp-s); max-width: 44ch; }
+
+.contact-rows { margin-top: var(--sp-l); }
+.contact-row {
+  display: flex;
+  gap: var(--sp-m);
+  padding: var(--sp-m) 0;
+  border-bottom: 1px solid var(--rule-dark);
+  align-items: flex-start;
+}
+.contact-row:last-child { border-bottom: none; }
+.contact-icon { color: var(--amber-lit); font-size: 18px; width: 24px; flex-shrink: 0; }
+.contact-row small { display: block; font-size: 9px; letter-spacing: .18em; color: rgba(255,255,255,.4); margin-bottom: 4px; }
+.contact-row strong { font-size: 15px; color: var(--white); }
+
+.contact-form-box { background: rgba(255,255,255,.05); padding: var(--sp-l); }
+.contact-form-box h3 { color: var(--white); font-size: 16px; margin-bottom: var(--sp-m); }
+.form-group { margin-bottom: var(--sp-m); }
+.form-group label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .12em;
+  font-weight: 600;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--rule-dark);
+  color: var(--white);
+  padding: 12px 14px;
+  font-family: var(--f-sans);
+  font-size: 14px;
+  outline: none;
+  transition: border-color .15s;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,.3); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--amber-lit); }
+.form-group select { appearance: none; cursor: pointer; }
+.form-group select option { background: var(--grove); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-m); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #0e1710;
+  color: rgba(255,255,255,.5);
+  padding: var(--sp-xl) 0 var(--sp-m);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--sp-xl);
+  padding-bottom: var(--sp-xl);
+  border-bottom: 1px solid var(--rule-dark);
+}
+.footer-brand .brand { margin-bottom: var(--sp-m); }
+.footer-brand .brand-name { color: rgba(255,255,255,.85); }
+.footer-brand .brand-sub  { color: rgba(255,255,255,.35); }
+.footer-brand p { font-size: 13px; max-width: 38ch; }
+.footer-col h4 {
+  font-family: var(--f-sans);
+  font-size: 10px;
+  letter-spacing: .18em;
+  font-weight: 600;
+  color: var(--amber-lit);
+  margin-bottom: var(--sp-m);
+}
+.footer-col a {
+  display: block;
+  color: rgba(255,255,255,.5);
+  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.footer-col a:hover { color: rgba(255,255,255,.85); }
+.footer-bottom {
+  padding-top: var(--sp-m);
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { min-height: 90svh; padding: var(--sp-xl) 5% var(--sp-l); }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); margin-top: var(--sp-l); }
+
+  .nav-links { display: none; flex-direction: column; gap: 0; }
+  .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: 70px; left: 0; right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: var(--sp-m) 5%;
+  }
+  .nav-links.open a { padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 15px; }
+  .nav-links.open a.cta { margin-top: var(--sp-s); text-align: center; padding: 13px; }
+  .nav-links.open .language-toggle { margin-top: var(--sp-s); align-self: flex-start; }
+  .hamburger { display: block; }
+
+  .intro-grid, .commitment-grid, .territory-inner, .contact-grid { grid-template-columns: 1fr; }
+  .intro-content { padding-left: 0; }
+  .intro-visual { aspect-ratio: 3/2; }
+  .proof-grid { grid-template-columns: 1fr 1fr; }
+  .product-gallery { grid-template-columns: repeat(2, 1fr); }
+  .product-cards { grid-template-columns: 1fr; }
+  .years-badge { right: var(--sp-m); }
+  .process-grid { grid-template-columns: 1fr 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .territory-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .process-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .territory-grid { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; }
+  .product-table { font-size: 13px; }
+  .product-table th, .product-table td { padding: 12px 10px; }
+  .product-gallery { gap: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
 }
 </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="container nav-container">
-    <a href="#accueil" class="logo">
-      <span class="logo-mark">✦</span>
-      <span class="logo-text">
-        <strong>MAISON DU CÈDRE</strong>
-        <small>EXPERTISE BOULANGÈRE</small>
+<!-- NAV -->
+<nav class="site-nav" id="nav" aria-label="Navigation principale">
+  <div class="wrap nav-inner">
+    <a href="#accueil" class="brand" aria-label="Maison du Cèdre — accueil">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>
+        <span class="brand-name">MAISON DU CÈDRE</span>
+        <small class="brand-sub">BOULANGERIE PROFESSIONNELLE</small>
       </span>
     </a>
 
-    <nav class="nav" id="nav">
-      <a href="#accueil">Accueil</a>
-      <a href="#expertise">Notre expertise</a>
-      <a href="#produits">Nos pains</a>
-      <a href="#services">Nos services</a>
-      <a href="#restaurateurs">Restaurateurs</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <button class="hamburger" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
 
-    <div class="nav-actions">
-      <button class="language-btn" type="button">FR</button>
-      <a href="#contact" class="nav-cta">Nous contacter</a>
-      <button class="menu-btn" id="menuBtn" type="button" aria-label="Ouvrir le menu">☰</button>
+    <div class="nav-links" id="navLinks" role="list">
+      <a href="#expertise" role="listitem">Expertise</a>
+      <a href="#catalogue" role="listitem">Catalogue</a>
+      <a href="#services" role="listitem">Services</a>
+      <a href="#livraison" role="listitem">Livraison</a>
+      <button class="language-toggle" id="languageToggle" type="button" aria-label="Passer le site en anglais">EN</button>
+      <a href="#contact" class="cta" role="listitem">Demande partenariat</a>
     </div>
   </div>
-</header>
+</nav>
 
 <main>
 
-<section class="hero" id="accueil">
-  <div class="container hero-content">
-    <div class="hero-label"><span></span>PLUS DE 25 ANS D'EXPERTISE</div>
-    <h1>Le savoir-faire boulanger <em>au service de la restauration.</em></h1>
-    <p class="hero-text">Maison du Cèdre accompagne les professionnels de la restauration avec des pains de qualité premium, une production maîtrisée et un service de proximité pensé pour leurs exigences.</p>
-    <div class="hero-buttons">
-      <a href="#expertise" class="btn btn-primary">Découvrir notre expertise</a>
-      <a href="#contact" class="btn btn-outline">Devenir partenaire</a>
+<!-- HERO -->
+<section id="accueil" class="hero" aria-label="Accueil">
+  <div class="hero-left">
+    <p class="hero-badge">FOURNISSEUR BOULANGER — ÎLE-DE-FRANCE</p>
+    <h1>Le pain qui fait la différence <em>à chaque service.</em></h1>
+    <p class="hero-sub">Maison du Cèdre fournit des pains artisanaux aux restaurants, hôtels et traiteurs d'Île-de-France depuis 25 ans. Livraison 5 jours sur 7, commande minimum dès 15 kg.</p>
+    <div class="hero-actions">
+      <a href="#catalogue" class="btn btn-amber">Voir le catalogue</a>
+      <a href="#contact"  class="btn btn-ghost">Demander un devis</a>
     </div>
-    <div class="hero-trust">
-      <div><strong>25+</strong><span>ans d'expérience</span></div>
-      <div><strong>Premium</strong><span>matières premières</span></div>
-      <div><strong>100%</strong><span>exigence professionnelle</span></div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">25</span>
+        <span class="stat-label">ANS D'EXPÉRIENCE</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">140+</span>
+        <span class="stat-label">RESTAURANTS PARTENAIRES</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">5j/7</span>
+        <span class="stat-label">LIVRAISON ÎLE-DE-FRANCE</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">15 kg</span>
+        <span class="stat-label">COMMANDE MINIMUM</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right" aria-hidden="true">
+    <div class="hero-photo">
+      <p class="hero-photo-caption">Le goût commence par la matière.</p>
+    </div>
+    <div class="catalogue-preview">
+      <p class="hero-right-label">EXTRAIT DU CATALOGUE</p>
+      <div class="cat-item">
+        <div>
+          <div class="cat-name">Baguette de tradition</div>
+          <div class="cat-detail">250 g · par 10 ou 25 unités</div>
+        </div>
+        <span class="cat-tag">BEST-SELLER</span>
+      </div>
+      <div class="cat-item">
+        <div>
+          <div class="cat-name">Pain de campagne rustique</div>
+          <div class="cat-detail">800 g · entier ou prétranché</div>
+        </div>
+        <span class="cat-tag">PREMIUM</span>
+      </div>
+      <div class="cat-item">
+        <div>
+          <div class="cat-name">Fougasse aux olives</div>
+          <div class="cat-detail">350 g · par 8 unités</div>
+        </div>
+        <span class="cat-tag">NOUVEAU</span>
+      </div>
+      <div class="cat-item">
+        <div>
+          <div class="cat-name">Brioche burger artisanale</div>
+          <div class="cat-detail">90 g · par 12 ou 30 unités</div>
+        </div>
+        <span class="cat-tag">RESTAURATION</span>
+      </div>
+      <div class="cat-item">
+        <div>
+          <div class="cat-name">Pain spécial sans gluten</div>
+          <div class="cat-detail">350 g · conditionnement individuel</div>
+        </div>
+        <span class="cat-tag">ALLERGIE</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="intro section">
-  <div class="container intro-grid">
-    <div class="section-label"><span>01</span>MAISON DU CÈDRE</div>
+<section class="proof-strip" aria-label="Engagements professionnels">
+  <div class="wrap proof-grid">
+    <div class="proof-item"><strong>Livraison fiable</strong><span>Avant votre service, 5 jours sur 7</span></div>
+    <div class="proof-item"><strong>Formats professionnels</strong><span>Conditionnements adaptés à vos volumes</span></div>
+    <div class="proof-item"><strong>Qualité constante</strong><span>Les mêmes recettes à chaque livraison</span></div>
+    <div class="proof-item"><strong>Un interlocuteur dédié</strong><span>Une réponse rapide, sans plateforme</span></div>
+  </div>
+</section>
+
+<!-- INTRO / ABOUT -->
+<section class="intro section" id="expertise">
+  <div class="wrap intro-grid">
+    <div class="intro-visual">
+      <div class="years-badge" aria-label="25 ans d'expertise">
+        <strong>25</strong>
+        <span>ANS D'EXPERTISE</span>
+      </div>
+      <p class="intro-visual-label">Notre fournil, Île-de-France</p>
+    </div>
+
+    <div class="intro-content">
+      <p class="section-label">NOTRE EXPERTISE</p>
+      <h2>Une maison construite pour les exigences <em>de la restauration.</em></h2>
+      <p>Maison du Cèdre a été fondée avec une seule conviction : les professionnels de la table méritent un fournisseur qui comprend leurs contraintes — les horaires, les volumes, la régularité, et la pression du service.</p>
+      <p>Depuis 25 ans, nous livrons des pains qui tiennent leur promesse à chaque table : croûte, mie, arôme, et présentation, du premier au dernier couvert.</p>
+
+      <div class="intro-line">
+        <div class="intro-line-item">
+          <strong>ZONE DE LIVRAISON</strong>
+          Île-de-France (75, 78, 91, 92, 93, 94, 95)
+        </div>
+        <div class="intro-line-item">
+          <strong>DÉLAI STANDARD</strong>
+          Commande J, livraison J+1
+        </div>
+        <div class="intro-line-item">
+          <strong>MINIMUM DE COMMANDE</strong>
+          15 kg ou 80 € HT
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section class="catalogue section" id="catalogue">
+  <div class="wrap">
+    <p class="section-label">CATALOGUE</p>
+    <div class="section-head">
+      <h2>Des références pensées <em>pour le service en salle.</em></h2>
+      <p>Chaque produit est disponible frais ou en précuit selon vos besoins de stockage. Conditionnements adaptés aux volumes professionnels.</p>
+    </div>
+
+    <div class="product-gallery" aria-label="Sélection de pains artisanaux">
+      <figure><img src="images/bread-01.jpg" alt="Pain artisanal à la croûte dorée"></figure>
+      <figure><img src="images/Gemini_Generated_Image_e5zm5je5zm5je5zm.jfif" alt="Fournil Maison du Cèdre en production"></figure>
+      <figure><img src="images/Gemini_Generated_Image_drj36cdrj36cdrj3.jfif" alt="Préparation artisanale du pain"></figure>
+      <figure><img src="images/Gemini_Generated_Image_70ykjc70ykjc70yk.jfif" alt="Pains artisanaux prêts à cuire"></figure>
+    </div>
+
+    <div class="product-cards">
+      <article class="product-card">
+        <div class="product-card-image"><img src="images/bread-01.jpg" alt="Baguette et pains artisanaux"></div>
+        <div class="product-card-content"><h3>Pains du quotidien</h3><p>Baguettes, pains de campagne et petits pains pour accompagner chaque couvert.</p><div class="product-card-meta"><span>250 g à 800 g</span><span>BEST-SELLER</span></div></div>
+      </article>
+      <article class="product-card">
+        <div class="product-card-image"><img src="images/production.jpg" alt="Pains aux graines et céréales"></div>
+        <div class="product-card-content"><h3>Pains signature</h3><p>Recettes aux graines, levain naturel et croûtes généreuses pour une offre distinctive.</p><div class="product-card-meta"><span>Sur commande</span><span>PREMIUM</span></div></div>
+      </article>
+      <article class="product-card">
+        <div class="product-card-image"><img src="images/Gemini_Generated_Image_e5zm5je5zm5je5zm.jfif" alt="Production de pains pour les professionnels"></div>
+        <div class="product-card-content"><h3>Formats restauration</h3><p>Brioche burger, focaccia et formats traiteur pensés pour vos cartes et vos volumes.</p><div class="product-card-meta"><span>Formats sur mesure</span><span>PRO</span></div></div>
+      </article>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table class="product-table" aria-label="Catalogue des produits">
+        <thead>
+          <tr>
+            <th>Produit</th>
+            <th>Format</th>
+            <th>Conditionnement</th>
+            <th>Disponibilité</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="prod-name">Baguette de tradition française</div>
+              <div class="prod-format">Farine T65 label Rouge Moulin</div>
+            </td>
+            <td>250 g</td>
+            <td>Boîte de 10 ou 25</td>
+            <td>Lun–Sam</td>
+            <td><span class="prod-tag tag-best">BEST-SELLER</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="prod-name">Pain de campagne rustique</div>
+              <div class="prod-format">Levain naturel, croûte épaisse</div>
+            </td>
+            <td>800 g</td>
+            <td>Entier ou prétranché · x6</td>
+            <td>Lun–Sam</td>
+            <td><span class="prod-tag tag-best">BEST-SELLER</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="prod-name">Focaccia huile d'olive &amp; romarin</div>
+              <div class="prod-format">Recette artisanale maison</div>
+            </td>
+            <td>400 g</td>
+            <td>Plateau de 8</td>
+            <td>Lun–Ven</td>
+            <td><span class="prod-tag tag-new">NOUVEAU</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="prod-name">Fougasse aux olives de Kalamata</div>
+              <div class="prod-format">Huile d'olive AOP, olives entières</div>
+            </td>
+            <td>350 g</td>
+            <td>x8</td>
+            <td>Mar, Jeu, Sam</td>
+            <td><span class="prod-tag tag-new">NOUVEAU</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="prod-name">Brioche burger artisanale</div>
+              <div class="prod-format">Mie filante, graines de sésame</div>
+            </td>
+            <td>90 g</td>
+            <td>x12 ou x30</td>
+            <td>Lun–Sam</td>
+            <td><span class="prod-tag tag-best">BEST-SELLER</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="prod-name">Pain ciabatta</div>
+              <div class="prod-format">Alvéoles généreuses, croûte fine</div>
+            </td>
+            <td>200 g</td>
+            <td>x10</td>
+            <td>Lun–Sam</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="prod-name">Petit pain individuel de table</div>
+              <div class="prod-format">Assortiment 3 variétés</div>
+            </td>
+            <td>40–50 g</td>
+            <td>x30 ou x60</td>
+            <td>Lun–Sam</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="prod-name">Pain sans gluten certifié</div>
+              <div class="prod-format">Conditionnement individuel scellé</div>
+            </td>
+            <td>350 g</td>
+            <td>x8</td>
+            <td>Mar, Ven</td>
+            <td><span class="prod-tag tag-event">ALLERGIE</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="prod-name">Pain de mie sandwich premium</div>
+              <div class="prod-format">Tranché fin ou épais selon commande</div>
+            </td>
+            <td>500 g</td>
+            <td>x6</td>
+            <td>Lun–Sam</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="prod-name">Couronne libanaise à partager</div>
+              <div class="prod-format">Recette maison, à commander 48h</div>
+            </td>
+            <td>600 g</td>
+            <td>Unité ou x4</td>
+            <td>Commande spéciale</td>
+            <td><span class="prod-tag tag-event">ÉVÉNEMENT</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="catalogue-note">
+      <strong>Catalogue complet disponible sur demande.</strong> Conditions de prix, grille tarifaire dégressif selon volume et fréquence de commande. Contactez notre équipe commerciale.
+    </p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process section">
+  <div class="wrap">
+    <p class="section-label">DU FOURNIL À VOTRE TABLE</p>
+    <h2>Ce qui différencie notre pain, <em>c'est ce que vous ne voyez pas.</em></h2>
+    <div class="process-grid" role="list">
+      <div class="process-step" role="listitem">
+        <div class="step-num" aria-hidden="true">1</div>
+        <h3>Sélection des farines</h3>
+        <p>Farines françaises Label Rouge, levain chef entretenu depuis 12 ans, ingrédients sans additifs.</p>
+      </div>
+      <div class="process-step" role="listitem">
+        <div class="step-num" aria-hidden="true">2</div>
+        <h3>Fermentation longue</h3>
+        <p>12 à 24h de pousse selon les recettes. La lenteur est ce qui construit le goût.</p>
+      </div>
+      <div class="process-step" role="listitem">
+        <div class="step-num" aria-hidden="true">3</div>
+        <h3>Façonnage manuel</h3>
+        <p>Chaque pièce est façonnée à la main. Pas de ligne industrielle, pas de standardisation.</p>
+      </div>
+      <div class="process-step" role="listitem">
+        <div class="step-num" aria-hidden="true">4</div>
+        <h3>Livraison matin</h3>
+        <p>Cuisson nocturne, départ à 4h. Votre pain est en salle avant votre équipe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITMENT -->
+<section class="commitment section">
+  <div class="wrap commitment-grid">
     <div>
-      <h2>Une expertise construite <span>sur plus de 25 ans.</span></h2>
-      <p class="large-text">Fondée sur plus de 25 ans d'expertise dans la boulangerie et la production de pains destinés à la restauration, Maison du Cèdre met son savoir-faire au service des professionnels de la table.</p>
-      <p>Notre métier repose sur une conviction simple : la qualité d'un pain ne doit jamais être laissée au hasard. Chaque matière première, chaque étape de fabrication et chaque détail de finition font l'objet d'une attention rigoureuse.</p>
-    </div>
-  </div>
-</section>
-
-<section class="expertise section dark-section" id="expertise">
-  <div class="container">
-    <div class="section-heading light">
-      <div class="section-label"><span>02</span>NOTRE EXPERTISE</div>
-      <h2>L'exigence dans <span>chaque détail.</span></h2>
-      <p>De la sélection des matières premières à la cuisson, notre expertise s'exprime à chaque étape.</p>
-    </div>
-    <div class="expertise-grid">
-      <article class="expertise-card"><div class="card-number">01</div><div class="card-icon">◈</div><h3>Matières premières premium</h3><p>Nous accordons une attention particulière à la sélection de nos matières premières afin de garantir la qualité et la régularité de nos pains.</p></article>
-      <article class="expertise-card"><div class="card-number">02</div><div class="card-icon">✧</div><h3>Savoir-faire</h3><p>Plus de 25 ans d'expérience nous permettent de maîtriser les exigences techniques de la fabrication de pains destinés aux professionnels.</p></article>
-      <article class="expertise-card"><div class="card-number">03</div><div class="card-icon">◌</div><h3>Travail minutieux</h3><p>Chaque étape est réalisée avec rigueur et précision afin de maintenir un niveau de qualité constant.</p></article>
-      <article class="expertise-card"><div class="card-number">04</div><div class="card-icon">◇</div><h3>Qualité premium</h3><p>Notre objectif est de proposer aux restaurateurs un pain qui contribue pleinement à l'expérience de leurs clients.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="products section" id="produits">
-  <div class="container">
-    <div class="section-heading">
-      <div class="section-label"><span>03</span>NOS PAINS</div>
-      <h2>Des produits pensés <span>pour les professionnels.</span></h2>
-      <p>Une gamme de pains destinée à accompagner les différents univers de la restauration et à répondre aux attentes des professionnels.</p>
-    </div>
-    <div class="product-grid">
-      <article class="product-card"><div class="product-image image-one"></div><div class="product-content"><span class="product-tag">RESTAURATION</span><h3>Pains de table</h3><p>Des pains conçus pour accompagner les repas et valoriser chaque table.</p></div></article>
-      <article class="product-card"><div class="product-image image-two"></div><div class="product-content"><span class="product-tag">PROFESSIONNELS</span><h3>Pains spéciaux</h3><p>Des références adaptées aux différents besoins et concepts de restauration.</p></div></article>
-      <article class="product-card"><div class="product-image image-three"></div><div class="product-content"><span class="product-tag">SAVOIR-FAIRE</span><h3>Créations boulangères</h3><p>Des produits développés avec exigence, précision et attention au résultat final.</p></div></article>
-    </div>
-  </div>
-</section>
-
-<section class="quality section">
-  <div class="container quality-grid">
-    <div class="quality-image"><div class="quality-badge"><strong>25+</strong><span>ANS D'EXPERTISE</span></div></div>
-    <div class="quality-content">
-      <div class="section-label"><span>04</span>NOTRE ENGAGEMENT</div>
-      <h2>La qualité n'est pas <span>une option.</span></h2>
-      <p>Pour un restaurateur, le pain doit être bien plus qu'un simple accompagnement.</p>
-      <p>Il participe à l'identité de la table, à l'expérience du convive et à l'image de l'établissement.</p>
-      <ul class="check-list">
-        <li><span>✓</span>Sélection rigoureuse des matières premières</li>
-        <li><span>✓</span>Production maîtrisée</li>
-        <li><span>✓</span>Contrôle attentif à chaque étape</li>
-        <li><span>✓</span>Recherche constante de régularité</li>
-        <li><span>✓</span>Accompagnement personnalisé</li>
+      <p class="section-label">NOTRE ENGAGEMENT</p>
+      <h2>Ce que vous êtes en droit <em>d'attendre de nous.</em></h2>
+      <ul class="commit-list">
+        <li>
+          <span class="commit-check" aria-hidden="true">✓</span>
+          <div class="commit-text">
+            <strong>Régularité garantie</strong>
+            <span>Même goût, même texture, même poids — à chaque livraison. Si un lot ne répond pas à nos standards, il ne part pas.</span>
+          </div>
+        </li>
+        <li>
+          <span class="commit-check" aria-hidden="true">✓</span>
+          <div class="commit-text">
+            <strong>Livraison 5 jours sur 7</strong>
+            <span>Du lundi au vendredi (samedi matin sur demande). Plage horaire choisie par établissement.</span>
+          </div>
+        </li>
+        <li>
+          <span class="commit-check" aria-hidden="true">✓</span>
+          <div class="commit-text">
+            <strong>Interlocuteur dédié</strong>
+            <span>Un commercial attitré pour chaque compte. Pas de plateforme, pas de robot — une personne.</span>
+          </div>
+        </li>
+        <li>
+          <span class="commit-check" aria-hidden="true">✓</span>
+          <div class="commit-text">
+            <strong>Commande jusqu'à 18h pour J+1</strong>
+            <span>Flexibilité de dernière minute pour les besoins imprévus ou les couverts supplémentaires.</span>
+          </div>
+        </li>
+        <li>
+          <span class="commit-check" aria-hidden="true">✓</span>
+          <div class="commit-text">
+            <strong>Fiches techniques & allergènes</strong>
+            <span>Documents disponibles pour chaque référence. Mise à jour automatique en cas de changement de recette.</span>
+          </div>
+        </li>
       </ul>
     </div>
+
+    <div class="commit-aside">
+      <blockquote>
+        "Pour un restaurant étoilé, le pain n'est pas un accessoire. C'est la première bouchée. Maison du Cèdre le sait, et ça se sent."
+      </blockquote>
+      <cite>— Chef de partie, restaurant gastronomique, Paris 8e</cite>
+
+      <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,.12);">
+        <p style="color: rgba(255,255,255,.55); font-size: 13px; margin-bottom: 20px;">Nous travaillons avec des restaurants de tous niveaux — du bistrot de quartier au restaurant gastronomique.</p>
+        <a href="#contact" class="btn btn-amber">Devenir partenaire</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="services section dark-section" id="services">
-  <div class="container">
-    <div class="section-heading light">
-      <div class="section-label"><span>05</span>NOS SERVICES</div>
-      <h2>Une relation professionnelle <span>qui va au-delà du produit.</span></h2>
-      <p>Parce qu'un bon produit doit être accompagné d'un service à la hauteur.</p>
+<!-- SERVICES -->
+<section class="services section" id="services">
+  <div class="wrap">
+    <p class="section-label">NOS SERVICES</p>
+    <div class="section-head">
+      <h2>Au-delà du pain, <em>une relation professionnelle.</em></h2>
     </div>
+
     <div class="services-grid">
-      <article class="service"><span class="service-number">01</span><h3>Vente directe</h3><p>Une relation commerciale directe permettant des échanges simples, rapides et personnalisés.</p></article>
-      <article class="service"><span class="service-number">02</span><h3>Télévente</h3><p>Une prise de commande facilitée et un interlocuteur disponible pour accompagner les besoins de votre établissement.</p></article>
-      <article class="service"><span class="service-number">03</span><h3>Suivi personnalisé</h3><p>Nous restons à l'écoute de nos partenaires afin d'assurer un suivi régulier et une relation durable.</p></article>
-      <article class="service"><span class="service-number">04</span><h3>Accompagnement</h3><p>Notre équipe accompagne les restaurateurs dans leurs besoins et leurs évolutions.</p></article>
+      <div class="service-card">
+        <h3>Commande régulière</h3>
+        <p>Fréquence hebdomadaire fixée selon votre activité. Ajustements possibles à tout moment via votre commercial ou notre ligne directe.</p>
+        <div class="service-detail">↗ MINIMUM 15 KG / COMMANDE</div>
+      </div>
+      <div class="service-card">
+        <h3>Commandes événementielles</h3>
+        <p>Mariage, séminaire, banquet, événement privé : pains spéciaux, volumes importants et conditionnements personnalisés sur devis.</p>
+        <div class="service-detail">↗ DÉLAI 48H MINIMUM</div>
+      </div>
+      <div class="service-card">
+        <h3>Catalogue sur mesure</h3>
+        <p>Vous avez un besoin spécifique — format, grammage, recette ? Nous développons des références exclusives pour les comptes réguliers.</p>
+        <div class="service-detail">↗ À PARTIR DE 6 MOIS DE PARTENARIAT</div>
+      </div>
+      <div class="service-card">
+        <h3>Télévente & service client</h3>
+        <p>Commandez par téléphone, email ou WhatsApp. Votre interlocuteur répond en moins de 2h pendant les heures ouvrées.</p>
+        <div class="service-detail">↗ LUN–VEN 7H–18H</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="restaurants section" id="restaurateurs">
-  <div class="container restaurant-grid">
-    <div class="restaurant-content">
-      <div class="section-label"><span>06</span>POUR LES RESTAURATEURS</div>
-      <h2>Votre exigence. <span>Notre engagement.</span></h2>
-      <p class="large-text">Nous savons que les professionnels de la restauration ont besoin de partenaires fiables, réactifs et attentifs à la régularité.</p>
-      <p>C'est pourquoi nous construisons avec chaque client une relation fondée sur l'écoute, la confiance, la qualité et le suivi.</p>
-      <br><a href="#contact" class="btn btn-primary">Échanger avec notre équipe</a>
-    </div>
-    <div class="restaurant-points">
-      <div class="restaurant-point"><strong>01</strong><div><h3>Écoute</h3><p>Comprendre les besoins spécifiques de chaque établissement.</p></div></div>
-      <div class="restaurant-point"><strong>02</strong><div><h3>Réactivité</h3><p>Une relation directe et une communication simple avec nos partenaires.</p></div></div>
-      <div class="restaurant-point"><strong>03</strong><div><h3>Régularité</h3><p>Maintenir un niveau de qualité constant au fil des commandes.</p></div></div>
-      <div class="restaurant-point"><strong>04</strong><div><h3>Partenariat</h3><p>Construire une relation professionnelle durable.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="occasion section">
-  <div class="container occasion-inner">
-    <div class="occasion-label">POUR VOS OCCASIONS</div>
-    <h2>Des solutions adaptées <span>à chaque moment.</span></h2>
-    <p>Restaurants, hôtels, événements professionnels, réceptions ou besoins spécifiques : Maison du Cèdre vous accompagne avec des solutions adaptées à votre activité.</p>
-    <br><a href="#contact" class="btn btn-outline">Parlons de votre projet</a>
-  </div>
-</section>
-
-<section class="gallery section">
-  <div class="container">
-    <div class="section-heading">
-      <div class="section-label"><span>07</span>NOTRE UNIVERS</div>
-      <h2>Le geste, <span>la précision, le produit.</span></h2>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item gallery-large" style="background:linear-gradient(135deg,#c6ad82,#435344)"></div>
-      <div class="gallery-item" style="background:linear-gradient(135deg,#d9bd91,#62472f)"></div>
-      <div class="gallery-item" style="background:linear-gradient(135deg,#bba47c,#4a513e)"></div>
-      <div class="gallery-item" style="background:linear-gradient(135deg,#927451,#28392d)"></div>
-    </div>
-  </div>
-</section>
-
-<section class="contact section dark-section" id="contact">
-  <div class="container contact-grid">
+<!-- TERRITORY -->
+<section class="territory section" id="livraison">
+  <div class="wrap territory-inner">
     <div>
-      <div class="section-label"><span>08</span>CONTACT</div>
-      <h2>Construisons ensemble <span>une relation durable.</span></h2>
-      <p>Vous êtes restaurateur, hôtelier ou professionnel de la restauration et souhaitez découvrir notre gamme ?</p>
-      <br><p>Notre équipe est à votre écoute pour échanger sur vos besoins et vous accompagner.</p>
+      <p class="section-label">ZONE DE LIVRAISON</p>
+      <h2>L'Île-de-France, <em>entièrement couverte.</em></h2>
+      <p>Nos véhicules réfrigérés couvrent l'ensemble de la région, avec des tournées matinales optimisées par secteur.</p>
+      <p style="margin-top: 16px;">Vous êtes en limite de zone ? Contactez-nous — nous trouvons généralement une solution.</p>
+      <div style="margin-top: 32px;">
+        <a href="#contact" class="btn btn-ghost">Vérifier ma zone</a>
+      </div>
     </div>
-    <div class="contact-card">
-      <div class="contact-row"><span>☎</span><div><small>TÉLÉPHONE</small><strong>+33 (0)X XX XX XX XX</strong></div></div>
-      <div class="contact-row"><span>✉</span><div><small>EMAIL</small><strong>contact@maisonducedre.fr</strong></div></div>
-      <div class="contact-row"><span>⌖</span><div><small>ADRESSE</small><strong>Île-de-France, France</strong></div></div>
-      <a href="mailto:contact@maisonducedre.fr" class="btn btn-primary contact-button">Prendre contact</a>
+
+    <div class="territory-grid">
+      <div class="territory-cell">
+        <strong>75</strong>
+        <span>Paris — toutes arrondissements</span>
+      </div>
+      <div class="territory-cell">
+        <strong>92</strong>
+        <span>Hauts-de-Seine</span>
+      </div>
+      <div class="territory-cell">
+        <strong>93</strong>
+        <span>Seine-Saint-Denis</span>
+      </div>
+      <div class="territory-cell">
+        <strong>94</strong>
+        <span>Val-de-Marne</span>
+      </div>
+      <div class="territory-cell">
+        <strong>78</strong>
+        <span>Yvelines</span>
+      </div>
+      <div class="territory-cell">
+        <strong>91</strong>
+        <span>Essonne</span>
+      </div>
+      <div class="territory-cell">
+        <strong>95</strong>
+        <span>Val-d'Oise</span>
+      </div>
+      <div class="territory-cell">
+        <strong>77</strong>
+        <span>Seine-et-Marne (partiel)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Téléchargez notre catalogue complet.</h2>
+    <p>Grille tarifaire, fiches produits, conditions de livraison — tout ce qu'il vous faut pour évaluer un partenariat.</p>
+    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+      <a href="#contact" class="btn btn-dark">Demander le catalogue PDF</a>
+      <a href="#contact" class="btn btn-ghost">Parler à un commercial</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact section" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-intro">
+      <p class="section-label">CONTACT</p>
+      <h2>Démarrons <em>la conversation.</em></h2>
+      <p>Que vous souhaitiez un devis, une dégustation, ou simplement poser une question — notre équipe répond dans la journée.</p>
+
+      <div class="contact-rows">
+        <div class="contact-row">
+          <span class="contact-icon" aria-hidden="true">☎</span>
+          <div>
+            <small>TÉLÉPHONE</small>
+            <strong>+33 (0)1 XX XX XX XX</strong>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon" aria-hidden="true">✉</span>
+          <div>
+            <small>EMAIL COMMERCIAL</small>
+            <strong>pro@maisonducedre.fr</strong>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon" aria-hidden="true">⌖</span>
+          <div>
+            <small>ZONE LIVRÉE</small>
+            <strong>Île-de-France — 8 départements</strong>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon" aria-hidden="true">◷</span>
+          <div>
+            <small>HORAIRES COMMERCIAUX</small>
+            <strong>Lun–Ven, 7h – 18h</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-box">
+      <h3>Demande de partenariat</h3>
+      <form id="partnerForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Prénom</label>
+            <input type="text" id="fname" name="prenom" required placeholder="Jean">
+          </div>
+          <div class="form-group">
+            <label for="lname">Nom</label>
+            <input type="text" id="lname" name="nom" required placeholder="Dupont">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="etablissement">Nom de l'établissement</label>
+          <input type="text" id="etablissement" name="etablissement" required placeholder="Restaurant Le Marché">
+        </div>
+        <div class="form-group">
+          <label for="type">Type d'établissement</label>
+          <select id="type" name="type" required>
+            <option value="" disabled selected>Sélectionner…</option>
+            <option>Restaurant gastronomique</option>
+            <option>Brasserie / Bistrot</option>
+            <option>Hôtel / Room service</option>
+            <option>Traiteur / Événementiel</option>
+            <option>Restauration collective</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="chef@restaurant.fr">
+          </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="telephone" placeholder="+33 6 XX XX XX XX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="volume">Volume estimé (kg / semaine)</label>
+          <select id="volume" name="volume">
+            <option value="" disabled selected>Estimation…</option>
+            <option>Moins de 20 kg</option>
+            <option>20 – 50 kg</option>
+            <option>50 – 100 kg</option>
+            <option>Plus de 100 kg</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (optionnel)</label>
+          <textarea id="message" name="message" rows="3" placeholder="Précisez vos besoins, votre secteur, vos questions…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-amber" style="width:100%; text-align:center;">Envoyer la demande</button>
+        <p id="formMsg" style="margin-top:12px; font-size:13px; display:none;"></p>
+      </form>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer class="footer">
-  <div class="container footer-grid">
+<!-- FOOTER -->
+<footer>
+  <div class="wrap footer-grid">
     <div class="footer-brand">
-      <a href="#accueil" class="logo">
-        <span class="logo-mark">✦</span>
-        <span class="logo-text"><strong>MAISON DU CÈDRE</strong><small>EXPERTISE BOULANGÈRE</small></span>
+      <a href="#accueil" class="brand" aria-label="Maison du Cèdre — accueil">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>
+          <span class="brand-name" style="color:rgba(255,255,255,.85)">MAISON DU CÈDRE</span>
+          <small class="brand-sub" style="color:rgba(255,255,255,.35)">BOULANGERIE PROFESSIONNELLE</small>
+        </span>
       </a>
-      <p>Le savoir-faire boulanger au service des professionnels de la restauration.</p>
+      <p>Fournisseur de pain artisanal pour les professionnels de la restauration en Île-de-France depuis 1999.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-col">
       <h4>NAVIGATION</h4>
       <a href="#expertise">Notre expertise</a>
-      <a href="#produits">Nos pains</a>
-      <a href="#services">Nos services</a>
-      <a href="#restaurateurs">Restaurateurs</a>
+      <a href="#catalogue">Catalogue</a>
+      <a href="#services">Services</a>
+      <a href="#livraison">Zone de livraison</a>
+      <a href="#contact">Contact</a>
     </div>
-    <div class="footer-links">
+    <div class="footer-col">
       <h4>PROFESSIONNELS</h4>
-      <a href="#contact">Demande commerciale</a>
-      <a href="#contact">Télévente</a>
+      <a href="#contact">Demande de devis</a>
+      <a href="#contact">Catalogue PDF</a>
       <a href="#contact">Devenir partenaire</a>
+      <a href="#contact">Commandes événementielles</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <span>© 2026 Maison du Cèdre. Tous droits réservés.</span>
-      <span>Qualité · Expertise · Engagement</span>
-    </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Maison du Cèdre. Tous droits réservés.</span>
+    <span>Qualité · Régularité · Proximité</span>
   </div>
 </footer>
 
 <script>
-const menuBtn = document.getElementById("menuBtn");
-const nav = document.getElementById("nav");
+// Mobile nav
+const toggle = document.getElementById('menuToggle');
+const links  = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+  toggle.textContent = open ? '✕' : '☰';
+});
+links.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.textContent = '☰';
+    toggle.setAttribute('aria-expanded', false);
+  });
+});
 
-menuBtn.addEventListener("click", () => {
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-  nav.style.position = "absolute";
-  nav.style.top = "78px";
-  nav.style.left = "0";
-  nav.style.right = "0";
-  nav.style.padding = "20px";
-  nav.style.background = "#fffdf9";
-  nav.style.flexDirection = "column";
+// Nav scroll shadow
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.style.boxShadow = scrollY > 10 ? '0 2px 16px rgba(0,0,0,.08)' : 'none';
+}, { passive: true });
+
+// Form
+document.getElementById('partnerForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const msg = document.getElementById('formMsg');
+  msg.style.display = 'block';
+  msg.style.color = '#c9923a';
+  msg.textContent = 'Votre demande a été envoyée. Notre équipe vous contacte dans la journée.';
+  e.target.reset();
 });
 </script>
+<script src="script.js"></script>
 
 </body>
 </html>
