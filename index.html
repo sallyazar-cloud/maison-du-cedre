@@ -25,6 +25,9 @@
   --amber-lit: #c9923a;
   --rule:      #d5cfc6;
   --rule-dark: #3a4f43;
+  --grove-gradient: linear-gradient(135deg, #10261b 0%, #1e3528 48%, #8a6428 155%);
+  --grove-gradient-soft: linear-gradient(120deg, #1e3528 0%, #2e4f3e 58%, #a0722a 145%);
+  --gold-gradient: linear-gradient(135deg, #8a6428 0%, #a0722a 48%, #c9923a 100%);
 
   --f-serif: 'Libre Baskerville', Georgia, serif;
   --f-sans:  'Inter', system-ui, sans-serif;
@@ -150,27 +153,26 @@ em { font-style: italic; color: var(--amber); }
 
 /* ─── HERO ─── */
 .hero {
-  min-height: 100svh;
   padding-top: 70px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: block;
   align-items: stretch;
 }
 .hero-left {
-  background: var(--grove);
+  background: var(--grove-gradient-soft);
+  background-attachment: fixed;
+  background-size: cover;
   color: var(--white);
-  padding: var(--sp-2xl) 6% var(--sp-xl);
+  padding: calc(var(--sp-2xl) + 20px) 6% 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 }
 .hero-right {
-  background:
-    linear-gradient(160deg, rgba(61,94,74,.7), rgba(30,53,40,.9)),
-    url("images/hero-bread.jpg") center / cover;
+  background: transparent;
   display: grid;
-  grid-template-rows: 1fr auto;
-  padding: var(--sp-xl) 6% var(--sp-l);
+  grid-template-columns: minmax(280px, 1fr) minmax(360px, 1fr);
+  padding: var(--sp-xl) 6%;
   gap: var(--sp-l);
 }
 .hero-photo {
@@ -206,7 +208,7 @@ em { font-style: italic; color: var(--amber); }
 
 .hero-stats {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: var(--rule-dark);
   border-top: 1px solid var(--rule-dark);
@@ -214,7 +216,7 @@ em { font-style: italic; color: var(--amber); }
 }
 .stat {
   background: var(--grove);
-  padding: var(--sp-m) var(--sp-m) var(--sp-m) 0;
+  padding: var(--sp-m) var(--sp-s) var(--sp-m) 0;
 }
 .stat-num {
   font-family: var(--f-serif);
@@ -266,6 +268,41 @@ em { font-style: italic; color: var(--amber); }
   margin-bottom: var(--sp-s);
   padding-top: var(--sp-l);
   border-top: 1px solid var(--rule-dark);
+}
+.hero-showcase {
+  position: relative;
+  overflow: hidden;
+  background: var(--grove-gradient-soft);
+  background-attachment: fixed;
+  background-size: cover;
+}
+.hero-showcase::before,
+.hero-showcase::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+}
+.hero-showcase::before {
+  width: 360px;
+  height: 360px;
+  top: -180px;
+  right: 12%;
+  border: 1px solid rgba(201,146,58,.18);
+  box-shadow: 0 0 0 28px rgba(201,146,58,.04), 0 0 0 56px rgba(201,146,58,.025);
+}
+.hero-showcase::after {
+  width: 220px;
+  height: 220px;
+  bottom: -120px;
+  left: 8%;
+  background: rgba(201,146,58,.08);
+  box-shadow: 0 0 90px 40px rgba(201,146,58,.08);
+}
+.hero-showcase .hero-right {
+  position: relative;
+  z-index: 1;
 }
 
 /* ─── SECTIONS ─── */
@@ -400,7 +437,7 @@ em { font-style: italic; color: var(--amber); }
 .catalogue-note strong { color: var(--ink); }
 
 /* ─── PROCESS ─── */
-.process { background: var(--grove); color: var(--white); }
+.process { background: var(--grove-gradient); color: var(--white); }
 .process h2 { color: var(--white); }
 .process .section-label { color: var(--amber-lit); }
 .process-grid {
@@ -491,7 +528,7 @@ em { font-style: italic; color: var(--amber); }
 }
 
 /* ─── TERRITORY ─── */
-.territory { background: var(--grove); color: var(--white); }
+.territory { background: var(--grove-gradient-soft); color: var(--white); }
 .territory h2 { color: var(--white); }
 .territory .section-label { color: var(--amber-lit); }
 .territory-inner {
@@ -522,7 +559,7 @@ em { font-style: italic; color: var(--amber); }
 
 /* ─── CTA BAND ─── */
 .cta-band {
-  background: var(--amber);
+  background: var(--gold-gradient);
   padding: var(--sp-xl) 0;
   text-align: center;
 }
@@ -531,7 +568,7 @@ em { font-style: italic; color: var(--amber); }
 .cta-band .btn-ghost { border-color: rgba(255,255,255,.7); }
 
 /* ─── CONTACT ─── */
-.contact { background: var(--grove); color: var(--white); }
+.contact { background: var(--grove-gradient); color: var(--white); }
 .contact h2 { color: var(--white); }
 .contact .section-label { color: var(--amber-lit); }
 .contact-grid {
@@ -590,7 +627,7 @@ em { font-style: italic; color: var(--amber); }
 
 /* ─── FOOTER ─── */
 footer {
-  background: #0e1710;
+  background: linear-gradient(135deg, #0b1b12 0%, #142c20 62%, #654a22 170%);
   color: rgba(255,255,255,.5);
   padding: var(--sp-xl) 0 var(--sp-m);
 }
@@ -632,9 +669,8 @@ footer {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-right { display: none; }
-  .hero-left { min-height: 90svh; padding: var(--sp-xl) 5% var(--sp-l); }
+  .hero-right { grid-template-columns: 1fr; }
+  .hero-left { padding: var(--sp-xl) 5% 0; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); margin-top: var(--sp-l); }
 
   .nav-links { display: none; flex-direction: column; gap: 0; }
@@ -739,7 +775,9 @@ footer {
       </div>
     </div>
   </div>
+</section>
 
+<section class="hero-showcase" aria-label="Catalogue et savoir-faire">
   <div class="hero-right" aria-hidden="true">
     <div class="hero-photo">
       <p class="hero-photo-caption">Le goût commence par la matière.</p>
