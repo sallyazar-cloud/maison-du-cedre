@@ -9,16 +9,16 @@
   color: var(--gold);
 }
 .section-label {
-  font-size: 10px;
-  letter-spacing: 1.2em;
+  font-size: 12px;
+  letter-spacing: 0.2em;
   font-weight: 600;
   color: var(--amber);
   margin-bottom: var(--sp-m);
 }
 .brand-logo {
   display: block;
-  width: 12px;
-  height: 12px;
+  width: 32px;
+  height: 64px;
   object-fit: contain;
   flex-shrink: 0;
 }
