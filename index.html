@@ -65,8 +65,8 @@ img { display: block; max-width: 100%; }
 
 /* ─── Typography ─── */
 h1, h2, h3, em { font-family: var(--f-serif); }
-h1 { font-size: clamp(38px, 5.5vw, 68px); font-weight: 700; }
-h2 { font-size: clamp(28px, 4vw, 46px); font-weight: 700; }
+h1 { font-size: clamp(38px, 5.5vw, 68px); font-weight: 700; text-wrap: balance; }
+h2 { font-size: clamp(28px, 4vw, 46px); font-weight: 700; text-wrap: balance; }
 h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
 p  { color: var(--ink-soft); max-width: 62ch; }
 
@@ -257,6 +257,7 @@ em {
   letter-spacing: -0.06em;
   font-size: clamp(72px, 6.4vw, 146px);
   max-width: 1240px;
+  text-wrap: balance;
 }
 .hero h1 em {
   color: #b3813d;
@@ -806,6 +807,11 @@ footer {
 
 @media (max-width: 600px) {
   .section { padding: 64px 0; }
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(48px, 14vw, 72px);
+    letter-spacing: -0.05em;
+  }
   .process-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
