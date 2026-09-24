@@ -48,6 +48,11 @@
 *, *::before, *::after { box-sizing: inherit; margin: 0; padding: 0; }
 
 /* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
 body {
   font-family: var(--f-sans);
   font-size: 16px;
@@ -62,6 +67,15 @@ body {
 .wrap { width: min(var(--max), 92%); margin-inline: auto; }
 
 img { display: block; max-width: 100%; }
+
+a, button, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber-lit);
+  outline-offset: 3px;
+}
 
 /* ─── Typography ─── */
 h1, h2, h3 { font-family: var(--f-serif); line-height: 1.15; color: var(--ink); }
@@ -108,7 +122,8 @@ em { font-style: italic; color: var(--amber); }
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  height: 70px;
+  min-height: 70px;
+  padding: 8px 0;
 }
 .brand {
   display: flex;
@@ -116,6 +131,7 @@ em { font-style: italic; color: var(--amber); }
   gap: 9px;
   text-decoration: none;
   color: var(--ink);
+  min-width: 0;
 }
 .brand-mark { color: var(--amber); font-size: 20px; }
 .brand-name { font-family: var(--f-serif); font-size: 16px; font-weight: 700; letter-spacing: .04em; }
@@ -127,6 +143,7 @@ em { font-style: italic; color: var(--amber); }
   font-weight: 500;
   color: var(--ink-soft);
   text-decoration: none;
+  transition: color .18s ease;
 }
 .nav-links a:hover { color: var(--grove); }
 .nav-links a.cta { color: var(--white); background: var(--grove); padding: 9px 18px; font-weight: 600; }
@@ -149,6 +166,7 @@ em { font-style: italic; color: var(--amber); }
   padding: 4px;
   color: var(--ink);
   font-size: 22px;
+  line-height: 1;
 }
 
 /* ─── HERO ─── */
@@ -183,6 +201,7 @@ em { font-style: italic; color: var(--amber); }
   display: flex;
   align-items: flex-end;
   padding: var(--sp-m);
+  border-radius: 0;
 }
 .hero-photo-caption {
   color: rgba(255,255,255,.8);
@@ -204,7 +223,17 @@ em { font-style: italic; color: var(--amber); }
   margin-bottom: var(--sp-l);
   max-width: 46ch;
 }
-.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.hero-actions .btn {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .hero-stats {
   display: grid;
@@ -213,6 +242,7 @@ em { font-style: italic; color: var(--amber); }
   background: var(--rule-dark);
   border-top: 1px solid var(--rule-dark);
   margin-top: var(--sp-xl);
+  width: min(100%, 900px);
 }
 .stat {
   background: var(--grove);
@@ -423,6 +453,33 @@ em { font-style: italic; color: var(--amber); }
 .product-card-meta { display: flex; justify-content: space-between; gap: 10px; margin-top: var(--sp-s); padding-top: var(--sp-s); border-top: 1px solid var(--rule); color: var(--amber); font-size: 11px; font-weight: 600; }
 .product-table .prod-name { font-weight: 600; color: var(--ink); font-family: var(--f-serif); font-size: 15px; }
 .product-table .prod-format { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+.availability {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  min-width: 118px;
+}
+.availability-day,
+.availability-special {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 25px;
+  padding: 3px 7px;
+  border: 1px solid var(--rule);
+  background: var(--field);
+  color: var(--grove);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1;
+}
+.availability-special {
+  border-color: rgba(160,114,42,.45);
+  background: rgba(201,146,58,.12);
+  color: var(--amber);
+  white-space: nowrap;
+}
 .prod-tag {
   font-size: 9px;
   letter-spacing: .1em;
@@ -688,8 +745,14 @@ footer {
     background: var(--paper);
     border-bottom: 1px solid var(--rule);
     padding: var(--sp-m) 5%;
+    box-shadow: 0 10px 18px rgba(18, 31, 22, 0.08);
   }
-  .nav-links.open a { padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 15px; }
+  .nav-links.open a {
+    width: 100%;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+  }
   .nav-links.open a.cta { margin-top: var(--sp-s); text-align: center; padding: 13px; }
   .nav-links.open .language-toggle { margin-top: var(--sp-s); align-self: flex-start; }
   .hamburger { display: block; }
@@ -708,15 +771,57 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .site-nav { left: 0; }
+  .nav-inner {
+    min-height: 64px;
+    padding: 6px 0;
+  }
+  .brand-name {
+    font-size: 14px;
+    letter-spacing: 0.03em;
+  }
+  .brand-sub {
+    letter-spacing: 0.12em;
+    font-size: 7.5px;
+  }
+  .hero {
+    padding-top: 64px;
+  }
+  .hero-left {
+    padding-top: 64px;
+    padding-bottom: 0;
+  }
+  .hero h1 {
+    line-height: 1.1;
+  }
+  .hero-sub {
+    font-size: 15px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-actions .btn {
+    width: 100%;
+  }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .proof-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .hero-stats { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .territory-grid { grid-template-columns: 1fr 1fr; }
   .footer-bottom { flex-direction: column; }
-  .product-table { font-size: 13px; }
+  .product-table { font-size: 13px; display: block; overflow-x: auto; white-space: nowrap; }
   .product-table th, .product-table td { padding: 12px 10px; }
-  .product-gallery { gap: 6px; }
+  .product-gallery { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .product-cards { gap: 12px; }
+  .section { padding: var(--sp-xl) 0; }
+  .section-head p { font-size: 16px; }
+  .years-badge {
+    top: var(--sp-m);
+    right: var(--sp-m);
+    min-width: 94px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -730,13 +835,17 @@ footer {
 <!-- NAV -->
 <nav class="site-nav" id="nav" aria-label="Navigation principale">
   <div class="wrap nav-inner">
-    <a href="#accueil" class="brand" aria-label="Maison du Cèdre — accueil">
-      <span class="brand-mark" aria-hidden="true">✦</span>
-      <span>
-        <span class="brand-name">MAISON DU CÈDRE</span>
-        <small class="brand-sub">BOULANGERIE PROFESSIONNELLE</small>
-      </span>
-    </a>
+   <a href="#accueil" class="brand" aria-label="Maison du Cèdre — accueil">
+  <img
+    class="brand-logo"
+    src="images/logo-mdc.jpeg.jpeg"
+    alt="Logo Maison du Cèdre"
+  >
+  <span>
+    <span class="brand-name">MAISON DU CÈDRE</span>
+    <small class="brand-sub">FABRICATION PAINS ET PATISSERIES</small>
+  </span>
+</a>
 
     <button class="hamburger" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
 
@@ -756,9 +865,21 @@ footer {
 <!-- HERO -->
 <section id="accueil" class="hero" aria-label="Accueil">
   <div class="hero-left">
+<<<<<<< Updated upstream
     <p class="hero-badge">FOURNISSEUR BOULANGER — ÎLE-DE-FRANCE</p>
     <h1>Le pain qui fait la différence <em>à chaque service.</em></h1>
     <p class="hero-sub">Maison du Cèdre fournit des pains artisanaux aux restaurants, hôtels et traiteurs d'Île-de-France depuis 25 ans. Livraison 5 jours sur 7, commande minimum dès 15 kg.</p>
+=======
+<<<<<<< HEAD
+    <p class="section-label">DU FOURNIL À VOTRE TABLE</p>
+    <h1>Le pain qui fait la différence,<br><em>à chaque service.</em></h1>
+=======
+  <p class="section-label">Le savoir-faire boulanger au service des professionnels.</p>rateurs</p>
+    <h1>Le pain qui fait la différence, 
+à chaque service.</em></h1>
+>>>>>>> 844c08ca649cf928b3401f09a71d779397a56014
+    <p class="hero-sub">Maison du Cèdre accompagne les restaurants, hôtels, traiteurs et professionnels de la restauration avec des pains de qualité, conçus pour répondre aux exigences du service professionnel. Livraison 5 jours sur 7, commande minimum dès 15 kg.</p>
+>>>>>>> Stashed changes
     <div class="hero-actions">
       <a href="#catalogue" class="btn btn-amber">Voir le catalogue</a>
       <a href="#contact"  class="btn btn-ghost">Demander un devis</a>
@@ -924,7 +1045,7 @@ footer {
             </td>
             <td>250 g</td>
             <td>Boîte de 10 ou 25</td>
-            <td>Lun–Sam</td>
+            <td><div class="availability" aria-label="Disponible du lundi au vendredi"><span class="availability-day">Lun</span><span class="availability-day">Mar</span><span class="availability-day">Mer</span><span class="availability-day">Jeu</span><span class="availability-day">Ven</span></div></td>
             <td><span class="prod-tag tag-best">BEST-SELLER</span></td>
           </tr>
           <tr>
@@ -934,7 +1055,7 @@ footer {
             </td>
             <td>800 g</td>
             <td>Entier ou prétranché · x6</td>
-            <td>Lun–Sam</td>
+            <td><div class="availability" aria-label="Disponible du lundi au vendredi"><span class="availability-day">Lun</span><span class="availability-day">Mar</span><span class="availability-day">Mer</span><span class="availability-day">Jeu</span><span class="availability-day">Ven</span></div></td>
             <td><span class="prod-tag tag-best">BEST-SELLER</span></td>
           </tr>
           <tr>
@@ -944,7 +1065,7 @@ footer {
             </td>
             <td>400 g</td>
             <td>Plateau de 8</td>
-            <td>Lun–Ven</td>
+            <td><div class="availability" aria-label="Disponible du lundi au vendredi"><span class="availability-day">Lun</span><span class="availability-day">Mar</span><span class="availability-day">Mer</span><span class="availability-day">Jeu</span><span class="availability-day">Ven</span></div></td>
             <td><span class="prod-tag tag-new">NOUVEAU</span></td>
           </tr>
           <tr>
@@ -954,7 +1075,7 @@ footer {
             </td>
             <td>350 g</td>
             <td>x8</td>
-            <td>Mar, Jeu, Sam</td>
+            <td><div class="availability" aria-label="Disponible le mardi et le jeudi"><span class="availability-day">Mar</span><span class="availability-day">Jeu</span></div></td>
             <td><span class="prod-tag tag-new">NOUVEAU</span></td>
           </tr>
           <tr>
@@ -964,7 +1085,7 @@ footer {
             </td>
             <td>90 g</td>
             <td>x12 ou x30</td>
-            <td>Lun–Sam</td>
+            <td><div class="availability" aria-label="Disponible du lundi au vendredi"><span class="availability-day">Lun</span><span class="availability-day">Mar</span><span class="availability-day">Mer</span><span class="availability-day">Jeu</span><span class="availability-day">Ven</span></div></td>
             <td><span class="prod-tag tag-best">BEST-SELLER</span></td>
           </tr>
           <tr>
@@ -974,7 +1095,7 @@ footer {
             </td>
             <td>200 g</td>
             <td>x10</td>
-            <td>Lun–Sam</td>
+            <td><div class="availability" aria-label="Disponible du lundi au vendredi"><span class="availability-day">Lun</span><span class="availability-day">Mar</span><span class="availability-day">Mer</span><span class="availability-day">Jeu</span><span class="availability-day">Ven</span></div></td>
             <td></td>
           </tr>
           <tr>
@@ -984,7 +1105,7 @@ footer {
             </td>
             <td>40–50 g</td>
             <td>x30 ou x60</td>
-            <td>Lun–Sam</td>
+            <td><div class="availability" aria-label="Disponible du lundi au vendredi"><span class="availability-day">Lun</span><span class="availability-day">Mar</span><span class="availability-day">Mer</span><span class="availability-day">Jeu</span><span class="availability-day">Ven</span></div></td>
             <td></td>
           </tr>
           <tr>
@@ -994,7 +1115,7 @@ footer {
             </td>
             <td>350 g</td>
             <td>x8</td>
-            <td>Mar, Ven</td>
+            <td><div class="availability" aria-label="Disponible le mardi et le vendredi"><span class="availability-day">Mar</span><span class="availability-day">Ven</span></div></td>
             <td><span class="prod-tag tag-event">ALLERGIE</span></td>
           </tr>
           <tr>
@@ -1004,7 +1125,7 @@ footer {
             </td>
             <td>500 g</td>
             <td>x6</td>
-            <td>Lun–Sam</td>
+            <td><div class="availability" aria-label="Disponible du lundi au vendredi"><span class="availability-day">Lun</span><span class="availability-day">Mar</span><span class="availability-day">Mer</span><span class="availability-day">Jeu</span><span class="availability-day">Ven</span></div></td>
             <td></td>
           </tr>
           <tr>
@@ -1014,7 +1135,7 @@ footer {
             </td>
             <td>600 g</td>
             <td>Unité ou x4</td>
-            <td>Commande spéciale</td>
+            <td><span class="availability-special">Sur commande · 48 h</span></td>
             <td><span class="prod-tag tag-event">ÉVÉNEMENT</span></td>
           </tr>
         </tbody>
