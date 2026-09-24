@@ -117,6 +117,13 @@ em { font-style: italic; color: var(--amber); }
   text-decoration: none;
   color: var(--ink);
 }
+.brand-logo {
+  display: block;
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 .brand-mark { color: var(--amber); font-size: 20px; }
 .brand-name { font-family: var(--f-serif); font-size: 16px; font-weight: 700; letter-spacing: .04em; }
 .brand-sub  { display: block; font-size: 8.5px; letter-spacing: .18em; color: var(--ink-soft); margin-top: 2px; }
@@ -730,21 +737,17 @@ footer {
 <!-- NAV -->
 <nav class="site-nav" id="nav" aria-label="Navigation principale">
   <div class="wrap nav-inner">
-   <a href="#accueil" class="brand" aria-label="Maison du Cèdre — accueil">
-  <img
-    class="brand-logo"
-    src="images/logo-mdc.jpeg.jpeg"
-    alt="Logo Maison du Cèdre"
-  >
-  <span>
-    <span class="brand-name">MAISON DU CÈDRE</span>
-    <small class="brand-sub">BOULANGERIE PROFESSIONNELLE</small>
-  </span>
-</a>
-    <span class="brand-name">MAISON DU CÈDRE</span>
-    <small class="brand-sub">FABRICATION PAINS ET PATISSERIES</small>
-  </span>
-</a>
+    <a href="#accueil" class="brand" aria-label="Maison du Cèdre — accueil">
+      <img
+        class="brand-logo"
+        src="images/logo-mdc.jpeg.jpeg"
+        alt="Logo Maison du Cèdre"
+      >
+      <span>
+        <span class="brand-name">MAISON DU CÈDRE</span>
+        <small class="brand-sub">BOULANGERIE PROFESSIONNELLE</small>
+      </span>
+    </a>
 
     <button class="hamburger" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
 
@@ -764,9 +767,8 @@ footer {
 <!-- HERO -->
 <section id="accueil" class="hero" aria-label="Accueil">
   <div class="hero-left">
-  <p class="section-label">Le savoir-faire boulanger au service des professionnels.</p>rateurs</p>
-    <h1>Le pain qui fait la différence, 
-à chaque service.</em></h1>
+    <p class="section-label">Le savoir-faire boulanger au service des professionnels.</p>
+    <h1>Le pain qui fait la différence, à chaque service.</h1>
     <p class="hero-sub">Maison du Cèdre accompagne les restaurants, hôtels, traiteurs et professionnels de la restauration avec des pains de qualité, conçus pour répondre aux exigences du service professionnel. Livraison 5 jours sur 7, commande minimum dès 15 kg.</p>
     <div class="hero-actions">
       <a href="#catalogue" class="btn btn-amber">Voir le catalogue</a>
