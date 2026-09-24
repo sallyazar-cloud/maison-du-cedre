@@ -8,3 +8,10 @@
 .contact-value:hover {
   color: var(--gold);
 }
+.section-label {
+  font-size: 10px;
+  letter-spacing: .2em;
+  font-weight: 600;
+  color: var(--amber);
+  margin-bottom: var(--sp-m);
+}
