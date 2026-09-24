@@ -125,8 +125,39 @@ em { font-style: italic; color: var(--amber); }
   flex-shrink: 0;
 }
 .brand-mark { color: var(--amber); font-size: 20px; }
-.brand-name { font-family: var(--f-serif); font-size: 16px; font-weight: 700; letter-spacing: .04em; }
-.brand-sub  { display: block; font-size: 8.5px; letter-spacing: .18em; color: var(--ink-soft); margin-top: 2px; }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand > span {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: 1.1;
+  width: 260px;
+}
+.brand-name,
+.brand-sub {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  text-align: left;
+}
+.brand-name {
+  font-family: var(--f-serif);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.brand-sub {
+  font-size: 6.5px;
+  letter-spacing: .10em;
+  line-height: 1.15;
+  color: var(--ink-soft);
+  margin-top: 2px;
+  text-transform: uppercase;
+}
 
 .nav-links { display: flex; align-items: center; gap: 26px; }
 .nav-links a {
@@ -745,7 +776,7 @@ footer {
       >
       <span>
         <span class="brand-name">MAISON DU CÈDRE</span>
-        <small class="brand-sub">BOULANGERIE PROFESSIONNELLE</small>
+        <small class="brand-sub">FABRICATION DE PAINS ET DE PÂTISSERIES</small>
       </span>
     </a>
 
@@ -1332,7 +1363,7 @@ footer {
         <span class="brand-mark" aria-hidden="true">✦</span>
         <span>
           <span class="brand-name" style="color:rgba(255,255,255,.85)">MAISON DU CÈDRE</span>
-          <small class="brand-sub" style="color:rgba(255,255,255,.35)">BOULANGERIE PROFESSIONNELLE</small>
+          <small class="brand-sub" style="color:rgba(255,255,255,.35)">FABRICATION DE PAINS ET DE PÂTISSERIES</small>
         </span>
       </a>
       <p>Fournisseur de pain artisanal pour les professionnels de la restauration en Île-de-France depuis 1999.</p>

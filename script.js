@@ -42,7 +42,7 @@ const translations = {
 };
 
 Object.assign(translations, {
-  "BOULANGERIE PROFESSIONNELLE": "PROFESSIONAL BAKERY",
+  "FABRICATION DE PAINS ET DE PATISSERIES": "BREAD AND PASTRY MAKING",
   "Ouvrir le menu": "Open menu",
   "Accueil": "Home",
   "Catalogue et savoir-faire": "Catalogue and expertise",
