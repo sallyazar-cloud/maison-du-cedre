@@ -126,15 +126,15 @@ em {
   text-decoration: none;
   color: var(--ink);
 }
-.brand-logo {
+.cedar-icon {
   display: block;
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
+  width: 30px;
+  height: 36px;
   flex-shrink: 0;
+  color: var(--amber);
 }
 .brand-mark { color: var(--amber); font-size: 20px; }
-.brand > span {
+.brand > span:not(.brand-mark) {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -824,11 +824,12 @@ footer {
 <nav class="site-nav" id="nav" aria-label="Navigation principale">
   <div class="wrap nav-inner">
     <a href="#accueil" class="brand" aria-label="Maison du Cèdre — accueil">
-      <img
-        class="brand-logo"
-        src="images/logo-mdc.jpeg.jpeg"
-        alt="Logo Maison du Cèdre"
-      >
+      <svg class="cedar-icon" viewBox="0 0 30 36" aria-hidden="true">
+        <path d="M15 2v31" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M15 4C12.8 7.2 10.6 9 7.4 10.5c2.3.2 4.2.9 5.8 2.2-3.8 1.1-6.5 3-9.1 5.2 3.1-.1 5.7.5 8 2-4.3 1.8-7.1 4.1-10.1 6.8 4.8-.2 8.3.6 11.5 2.3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 4c2.2 3.2 4.4 5 7.6 6.5-2.3.2-4.2.9-5.8 2.2 3.8 1.1 6.5 3 9.1 5.2-3.1-.1-5.7.5-8 2 4.3 1.8 7.1 4.1 10.1 6.8-4.8-.2-8.3.6-11.5 2.3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11.5 33h7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
       <span>
         <span class="brand-name">MAISON DU CÈDRE</span>
         <small class="brand-sub">FABRICATION DE PAINS ET DE PÂTISSERIES</small>
@@ -1483,7 +1484,12 @@ footer {
   <div class="wrap footer-grid">
     <div class="footer-brand">
       <a href="#accueil" class="brand" aria-label="Maison du Cèdre — accueil">
-        <span class="brand-mark" aria-hidden="true">✦</span>
+        <svg class="cedar-icon" viewBox="0 0 30 36" aria-hidden="true">
+          <path d="M15 2v31" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M15 4C12.8 7.2 10.6 9 7.4 10.5c2.3.2 4.2.9 5.8 2.2-3.8 1.1-6.5 3-9.1 5.2 3.1-.1 5.7.5 8 2-4.3 1.8-7.1 4.1-10.1 6.8 4.8-.2 8.3.6 11.5 2.3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 4c2.2 3.2 4.4 5 7.6 6.5-2.3.2-4.2.9-5.8 2.2 3.8 1.1 6.5 3 9.1 5.2-3.1-.1-5.7.5-8 2 4.3 1.8 7.1 4.1 10.1 6.8-4.8-.2-8.3.6-11.5 2.3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11.5 33h7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
         <span>
           <span class="brand-name" style="color:rgba(255,255,255,.85)">MAISON DU CÈDRE</span>
           <small class="brand-sub" style="color:rgba(255,255,255,.35)">FABRICATION DE PAINS ET DE PÂTISSERIES</small>
