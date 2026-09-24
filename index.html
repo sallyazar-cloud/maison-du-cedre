@@ -21,8 +21,8 @@
   --grove:     #1e3528;
   --grove-mid: #2e4f3e;
   --grove-lit: #3d6650;
-  --amber:     #a0722a;
-  --amber-lit: #c9923a;
+  --amber:     #8a6428;
+  --amber-lit: #a0722a;
   --rule:      #d5cfc6;
   --rule-dark: #3a4f43;
   --grove-gradient: linear-gradient(135deg, #10261b 0%, #1e3528 48%, #8a6428 155%);
@@ -64,13 +64,17 @@ body {
 img { display: block; max-width: 100%; }
 
 /* ─── Typography ─── */
-h1, h2, h3 { font-family: var(--f-serif); line-height: 1.15; color: var(--ink); }
+h1, h2, h3, em { font-family: var(--f-serif); }
 h1 { font-size: clamp(38px, 5.5vw, 68px); font-weight: 700; }
 h2 { font-size: clamp(28px, 4vw, 46px); font-weight: 700; }
 h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
 p  { color: var(--ink-soft); max-width: 62ch; }
 
-em { font-style: italic; color: var(--amber); }
+em {
+  font-style: italic;
+  color: var(--amber);
+  font-weight: 600;
+}
 
 /* ─── Buttons ─── */
 .btn {
@@ -200,7 +204,7 @@ em { font-style: italic; color: var(--amber); }
   background-attachment: fixed;
   background-size: cover;
   color: var(--white);
-  padding: calc(var(--sp-2xl) + 20px) 6% 0;
+  padding: 92px 6% 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -231,16 +235,32 @@ em { font-style: italic; color: var(--amber); }
 .hero-badge {
   font-size: 10px;
   letter-spacing: .2em;
-  color: var(--amber-lit);
+  color: var(--amber);
   margin-bottom: var(--sp-m);
   font-weight: 600;
 }
-.hero h1 { color: var(--white); margin-bottom: var(--sp-m); }
+.hero h1 {
+  color: var(--white);
+  margin-bottom: var(--sp-m);
+  font-family: var(--f-serif);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-size: clamp(64px, 6vw, 128px);
+  max-width: 1200px;
+}
+.hero h1 em {
+  color: var(--amber);
+  font-style: italic;
+  font-family: var(--f-serif);
+  font-weight: 700;
+}
 .hero-sub {
   font-size: 17px;
-  color: rgba(255,255,255,.75);
+  color: rgba(255,255,255,.78);
   margin-bottom: var(--sp-l);
   max-width: 46ch;
+  line-height: 1.5;
 }
 .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
@@ -260,7 +280,7 @@ em { font-style: italic; color: var(--amber); }
 .stat-num {
   font-family: var(--f-serif);
   font-size: 36px;
-  color: var(--amber-lit);
+  color: var(--amber);
   line-height: 1;
   display: block;
 }
@@ -301,7 +321,7 @@ em { font-style: italic; color: var(--amber); }
   font-size: 9px;
   letter-spacing: .1em;
   font-weight: 600;
-  color: var(--amber-lit);
+  color: var(--amber);
   border: 1px solid var(--amber);
   padding: 3px 8px;
   white-space: nowrap;
@@ -692,7 +712,7 @@ footer {
   font-size: 10px;
   letter-spacing: .18em;
   font-weight: 600;
-  color: var(--amber-lit);
+  color: var(--amber);
   margin-bottom: var(--sp-m);
 }
 .footer-col a {
@@ -799,7 +819,7 @@ footer {
 <section id="accueil" class="hero" aria-label="Accueil">
   <div class="hero-left">
     <p class="section-label">Le savoir-faire boulanger au service des professionnels.</p>
-    <h1>Le pain qui fait la différence, à chaque service.</h1>
+    <h1>Le pain qui fait la différence,<br><em>à chaque service.</em></h1>
     <p class="hero-sub">Maison du Cèdre accompagne les restaurants, hôtels, traiteurs et professionnels de la restauration avec des pains de qualité, conçus pour répondre aux exigences du service professionnel. Livraison 5 jours sur 7, commande minimum dès 15 kg.</p>
     <div class="hero-actions">
       <a href="#catalogue" class="btn btn-amber">Voir le catalogue</a>
