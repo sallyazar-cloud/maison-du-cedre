@@ -212,9 +212,11 @@ Object.assign(translations, {
   "Disponible le mardi et le jeudi": "Available Tuesday and Thursday",
   "Disponible le mardi et le vendredi": "Available Tuesday and Friday",
   "Sur commande · 48 h": "Made to order · 48 hours",
+<<<<<<< Updated upstream
   "Lun–Sam": "Mon–Sat",
+=======
+>>>>>>> Stashed changes
   "Lun–Ven": "Mon–Fri",
-  "Mar, Jeu, Sam": "Tue, Thu, Sat",
   "Mar, Ven": "Tue, Fri",
   "MINIMUM 15 KG / COMMANDE": "MINIMUM 15 KG / ORDER",
   "DÉLAI 48H MINIMUM": "48H MINIMUM LEAD TIME",
@@ -251,7 +253,7 @@ function setLanguage(language) {
     ? "Maison du Cèdre | Artisan bread for professional catering"
     : "Maison du Cèdre | Pain artisanal pour la restauration professionnelle";
   languageToggle.textContent = isEnglish ? "FR" : "EN";
-  languageToggle.setAttribute("aria-label", isEnglish ? "Passer le site en français" : "Passer le site en anglais");
+  languageToggle.setAttribute("aria-label", isEnglish ? "Switch the site to French" : "Passer le site en anglais");
   languageToggle.dataset.language = language;
 }
 
