@@ -13,21 +13,21 @@
 <style>
 /* ─── Tokens ─── */
 :root {
-  --ink:       #1a1f1c;
-  --ink-soft:  #3d4740;
-  --field:     #f2ede6;
-  --paper:     #faf8f5;
+  --ink:       #27352e;
+  --ink-soft:  #526057;
+  --field:     #f1ece4;
+  --paper:     #fbfaf7;
   --white:     #ffffff;
-  --grove:     #1e3528;
-  --grove-mid: #2e4f3e;
-  --grove-lit: #3d6650;
-  --amber:     #b3813d;
-  --amber-lit: #c29552;
-  --rule:      #d5cfc6;
-  --rule-dark: #3a4f43;
-  --grove-gradient: linear-gradient(135deg, #10261b 0%, #1e3528 48%, #8a6428 155%);
-  --grove-gradient-soft: linear-gradient(120deg, #1e3528 0%, #2e4f3e 58%, #a0722a 145%);
-  --gold-gradient: linear-gradient(135deg, #8a6428 0%, #a0722a 48%, #c9923a 100%);
+  --grove:     #405749;
+  --grove-mid: #536d5d;
+  --grove-lit: #718474;
+  --amber:     #a66f4f;
+  --amber-lit: #bd8a67;
+  --rule:      #d9d3ca;
+  --rule-dark: #53675b;
+  --grove-gradient: linear-gradient(135deg, #2f4639 0%, #405749 58%, #86624d 155%);
+  --grove-gradient-soft: linear-gradient(120deg, #405749 0%, #536d5d 58%, #9c7158 145%);
+  --gold-gradient: linear-gradient(135deg, #8e6048 0%, #a66f4f 52%, #c18b67 100%);
 
   --f-serif: 'Libre Baskerville', Georgia, serif;
   --f-sans:  'Inter', system-ui, sans-serif;
@@ -155,14 +155,16 @@ em {
   letter-spacing: .04em;
 }
 .brand-sub {
-  font-size: 6.5px;
-  letter-spacing: .25em;
-  line-height: 1.15;
-  color: var(--ink-soft);
-  margin-top: 2px;
+  font-size: 5.5px;
+  letter-spacing: .18em;
+  line-height: 1.2;
+  color: #7b847d;
+  margin-top: 3px;
   text-transform: uppercase;
   text-align: justify;
   text-align-last: justify;
+  font-weight: 400;
+  opacity: .82;
 }
 
 .nav-links { display: flex; align-items: center; gap: 26px; }
@@ -247,7 +249,7 @@ em {
   margin-bottom: var(--sp-m);
   font-weight: 600;
 }
-.hero-left .section-label { color: #d2b17d; }
+.hero-left .section-label { color: #d5b08f; }
 .hero h1 {
   color: var(--white);
   margin-bottom: var(--sp-m);
@@ -260,7 +262,7 @@ em {
   text-wrap: balance;
 }
 .hero h1 em {
-  color: #b3813d;
+  color: var(--amber-lit);
   font-style: italic;
   font-family: var(--f-serif);
   font-weight: 700;
@@ -395,7 +397,7 @@ em {
   font-size: 11px;
   letter-spacing: .14em;
   font-weight: 600;
-  color: #c8a96d;
+  color: var(--amber);
   margin-bottom: var(--sp-m);
   text-transform: none;
 }
@@ -543,7 +545,7 @@ em {
 /* ─── PROCESS ─── */
 .process { background: var(--grove-gradient); color: var(--white); }
 .process h2 { color: var(--white); }
-.process .section-label { color: #d2b17d; }
+.process .section-label { color: #d5b08f; }
 .process-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -634,7 +636,7 @@ em {
 /* ─── TERRITORY ─── */
 .territory { background: var(--grove-gradient-soft); color: var(--white); }
 .territory h2 { color: var(--white); }
-.territory .section-label { color: #d2b17d; }
+.territory .section-label { color: #d5b08f; }
 .territory-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -674,7 +676,7 @@ em {
 /* ─── CONTACT ─── */
 .contact { background: var(--grove-gradient); color: var(--white); }
 .contact h2 { color: var(--white); }
-.contact .section-label { color: #d2b17d; }
+.contact .section-label { color: #d5b08f; }
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -731,7 +733,7 @@ em {
 
 /* ─── FOOTER ─── */
 footer {
-  background: linear-gradient(135deg, #0b1b12 0%, #142c20 62%, #654a22 170%);
+  background: linear-gradient(135deg, #263b30 0%, #405749 62%, #765642 170%);
   color: rgba(255,255,255,.5);
   padding: 64px 0 var(--sp-m);
 }
@@ -744,7 +746,7 @@ footer {
 }
 .footer-brand .brand { margin-bottom: var(--sp-m); }
 .footer-brand .brand-name { color: rgba(255,255,255,.85); }
-.footer-brand .brand-sub  { color: rgba(255,255,255,.35); }
+.footer-brand .brand-sub  { color: rgba(255,255,255,.42); font-size: 5px; letter-spacing: .14em; opacity: .72; }
 .footer-brand p { font-size: 13px; max-width: 38ch; }
 .footer-col h4 {
   font-family: var(--f-sans);
@@ -1552,7 +1554,7 @@ document.getElementById('partnerForm').addEventListener('submit', e => {
   e.preventDefault();
   const msg = document.getElementById('formMsg');
   msg.style.display = 'block';
-  msg.style.color = '#c9923a';
+  msg.style.color = getComputedStyle(document.documentElement).getPropertyValue('--amber-lit').trim();
   msg.textContent = document.documentElement.lang === 'en'
     ? 'Your request has been sent. Our team will contact you today.'
     : 'Votre demande a été envoyée. Notre équipe vous contacte dans la journée.';
