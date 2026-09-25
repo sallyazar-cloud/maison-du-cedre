@@ -269,6 +269,37 @@ function setLanguage(language) {
   languageToggle.dataset.language = language;
 }
 
+function startCountUp(element) {
+  const target = Number(element.dataset.count);
+  const suffix = element.dataset.suffix || "";
+  const duration = 1400;
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+    const easedProgress = 1 - Math.pow(1 - progress, 3);
+    element.textContent = `${Math.round(target * easedProgress)}${suffix}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    }
+  }
+
+  element.textContent = `0${suffix}`;
+  requestAnimationFrame(update);
+}
+
+const countUpElements = document.querySelectorAll(".count-up");
+const countUpObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    startCountUp(entry.target);
+    observer.unobserve(entry.target);
+  });
+}, { threshold: 0.25 });
+
+countUpElements.forEach((element) => countUpObserver.observe(element));
+
 languageToggle.addEventListener("click", () => {
   setLanguage(languageToggle.dataset.language === "en" ? "fr" : "en");
 });
