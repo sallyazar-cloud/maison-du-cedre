@@ -501,27 +501,6 @@ em {
 .product-card-meta { display: flex; justify-content: space-between; gap: 10px; margin-top: var(--sp-s); padding-top: var(--sp-s); border-top: 1px solid var(--rule); color: var(--amber); font-size: 11px; font-weight: 600; }
 .product-table .prod-name { font-weight: 600; color: var(--ink); font-family: var(--f-serif); font-size: 15px; }
 .product-table .prod-format { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
-.availability-days {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.availability-day {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 34px;
-  padding: 5px 8px;
-  border-radius: 999px;
-  border: 1px solid var(--rule);
-  background: var(--field);
-  color: var(--ink-soft);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  line-height: 1;
-}
 .prod-tag {
   font-size: 9px;
   letter-spacing: .1em;
@@ -1022,7 +1001,6 @@ footer {
             <th>Produit</th>
             <th>Format</th>
             <th>Conditionnement</th>
-            <th>Disponibilité</th>
             <th></th>
           </tr>
         </thead>
@@ -1034,15 +1012,6 @@ footer {
             </td>
             <td>250 g</td>
             <td>Boîte de 10 ou 25</td>
-            <td>
-              <div class="availability-days">
-                <span class="availability-day">Lun</span>
-                <span class="availability-day">Mar</span>
-                <span class="availability-day">Mer</span>
-                <span class="availability-day">Jeu</span>
-                <span class="availability-day">Ven</span>
-              </div>
-            </td>
             <td><span class="prod-tag tag-best">BEST-SELLER</span></td>
           </tr>
           <tr>
@@ -1052,15 +1021,6 @@ footer {
             </td>
             <td>800 g</td>
             <td>Entier ou prétranché · x6</td>
-            <td>
-              <div class="availability-days">
-                <span class="availability-day">Lun</span>
-                <span class="availability-day">Mar</span>
-                <span class="availability-day">Mer</span>
-                <span class="availability-day">Jeu</span>
-                <span class="availability-day">Ven</span>
-              </div>
-            </td>
             <td><span class="prod-tag tag-best">BEST-SELLER</span></td>
           </tr>
           <tr>
@@ -1070,15 +1030,6 @@ footer {
             </td>
             <td>400 g</td>
             <td>Plateau de 8</td>
-            <td>
-              <div class="availability-days">
-                <span class="availability-day">Lun</span>
-                <span class="availability-day">Mar</span>
-                <span class="availability-day">Mer</span>
-                <span class="availability-day">Jeu</span>
-                <span class="availability-day">Ven</span>
-              </div>
-            </td>
             <td><span class="prod-tag tag-new">NOUVEAU</span></td>
           </tr>
           <tr>
@@ -1088,14 +1039,6 @@ footer {
             </td>
             <td>350 g</td>
             <td>x8</td>
-            <td>
-              <div class="availability-days">
-                <span class="availability-day">Mar</span>
-                <span class="availability-day">Mer</span>
-                <span class="availability-day">Jeu</span>
-                <span class="availability-day">Ven</span>
-              </div>
-            </td>
             <td><span class="prod-tag tag-new">NOUVEAU</span></td>
           </tr>
           <tr>
@@ -1105,15 +1048,6 @@ footer {
             </td>
             <td>90 g</td>
             <td>x12 ou x30</td>
-            <td>
-              <div class="availability-days">
-                <span class="availability-day">Lun</span>
-                <span class="availability-day">Mar</span>
-                <span class="availability-day">Mer</span>
-                <span class="availability-day">Jeu</span>
-                <span class="availability-day">Ven</span>
-              </div>
-            </td>
             <td><span class="prod-tag tag-best">BEST-SELLER</span></td>
           </tr>
           <tr>
@@ -1123,15 +1057,6 @@ footer {
             </td>
             <td>200 g</td>
             <td>x10</td>
-            <td>
-              <div class="availability-days">
-                <span class="availability-day">Lun</span>
-                <span class="availability-day">Mar</span>
-                <span class="availability-day">Mer</span>
-                <span class="availability-day">Jeu</span>
-                <span class="availability-day">Ven</span>
-              </div>
-            </td>
             <td></td>
           </tr>
           <tr>
@@ -1141,15 +1066,6 @@ footer {
             </td>
             <td>40–50 g</td>
             <td>x30 ou x60</td>
-            <td>
-              <div class="availability-days">
-                <span class="availability-day">Lun</span>
-                <span class="availability-day">Mar</span>
-                <span class="availability-day">Mer</span>
-                <span class="availability-day">Jeu</span>
-                <span class="availability-day">Ven</span>
-              </div>
-            </td>
             <td></td>
           </tr>
           <tr>
@@ -1159,12 +1075,6 @@ footer {
             </td>
             <td>350 g</td>
             <td>x8</td>
-            <td>
-              <div class="availability-days">
-                <span class="availability-day">Mar</span>
-                <span class="availability-day">Ven</span>
-              </div>
-            </td>
             <td><span class="prod-tag tag-event">ALLERGIE</span></td>
           </tr>
           <tr>
@@ -1174,15 +1084,6 @@ footer {
             </td>
             <td>500 g</td>
             <td>x6</td>
-            <td>
-              <div class="availability-days">
-                <span class="availability-day">Lun</span>
-                <span class="availability-day">Mar</span>
-                <span class="availability-day">Mer</span>
-                <span class="availability-day">Jeu</span>
-                <span class="availability-day">Ven</span>
-              </div>
-            </td>
             <td></td>
           </tr>
           <tr>
@@ -1192,7 +1093,6 @@ footer {
             </td>
             <td>600 g</td>
             <td>Unité ou x4</td>
-            <td>Commande spéciale</td>
             <td><span class="prod-tag tag-event">ÉVÉNEMENT</span></td>
           </tr>
         </tbody>
