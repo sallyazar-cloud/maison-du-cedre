@@ -208,7 +208,7 @@ Object.assign(translations, {
   "50 – 100 kg": "50 – 100 kg",
   "Plus de 100 kg": "More than 100 kg",
   "Message (optionnel)": "Message (optional)",
-  "Fournisseur de pain artisanal pour les professionnels de la restauration en Île-de-France depuis 1999.": "Artisan bread supplier for catering professionals across Île-de-France since 1999.",
+  "Fournisseur de pain artisanal pour les professionnels de la restauration en Île-de-France.": "Artisan bread supplier for catering professionals across Île-de-France.",
   "NAVIGATION": "NAVIGATION",
   "Notre expertise": "Our expertise",
   "Zone de livraison": "Delivery area",
