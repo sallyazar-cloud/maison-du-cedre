@@ -289,7 +289,7 @@ function startCountUp(element) {
   requestAnimationFrame(update);
 }
 
-const countUpElements = document.querySelectorAll(".count-up");
+const countUpElements = document.querySelectorAll(".territory-cell .count-up");
 const countUpObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
